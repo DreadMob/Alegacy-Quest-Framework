@@ -1,0 +1,3 @@
+[submodule "config-editor"]
+	path = config-editor
+	url = https://github.com/DreadMob/Alegacy-QF-Editor.git
