@@ -110,7 +110,36 @@ Full docs are in the [`docs/`](docs/) folder:
 
 ---
 
-## 🚀 Building
+## �️ Alegacy Quest Framework Editor
+
+The repository includes a **visual desktop application** (`config-editor/`) for creating and editing all framework configurations without touching JSON manually.
+
+**Built with:** Rust + Tauri + Svelte 5 + Tailwind CSS
+
+### Features:
+- 📊 **Analytics Dashboard** — Balance charts, attribute distribution, boss HP ranges, quest category breakdown
+- ⚔️ **Item Editor** — Attributes from dropdown, color picker for names, table/card view, folder grouping
+- 🐉 **Boss Editor** — Abilities, stages, HP phase visualization
+- 📜 **Quest Editor** — All objectives/actions from dropdown, stages support, gather/kill/action objectives, random rewards
+- 🎯 **Boss Hunt** — Relocate intervals, respawn, rotation, activation range
+- 💎 **Quality Tiers** — Color picker, bonus %, applicable items
+- 👥 **NPCs** — Quest giver config + dialogue editor in one view
+- 🔥 **Hollow Trials** — Tiers, challenges, difficulty visualization
+- ⭐ **Reputation** — Ranks, rewards, progression bar
+- 🌐 **Localization** — All lang files, search, jump between locales, auto-sized fields for long texts
+- 🌍 **Bilingual UI** — Russian / English
+
+### Running the editor:
+```bash
+cd config-editor
+npm install
+# Use dev-tauri.bat on Windows (sets up MSVC environment)
+npx tauri dev
+```
+
+---
+
+## �🚀 Building
 
 ```bash
 dotnet build

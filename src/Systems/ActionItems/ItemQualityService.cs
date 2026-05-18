@@ -117,10 +117,19 @@ namespace VsQuest
                 }
             }
 
-            // Fallback: if no quality was rolled, apply the first one (lowest tier)
+            // If no quality was rolled:
+            // - If multiple qualities exist for this item, fallback to the first (lowest tier)
+            // - If only one quality exists, item remains without quality (chance-based)
             if (selectedQuality == null)
             {
-                selectedQuality = applicableQualities[0];
+                if (applicableQualities.Count > 1)
+                {
+                    selectedQuality = applicableQualities[0];
+                }
+                else
+                {
+                    return false;
+                }
             }
 
             // If quality has an override, signal the caller to replace the item
