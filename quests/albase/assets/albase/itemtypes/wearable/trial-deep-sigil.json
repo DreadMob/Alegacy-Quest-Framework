@@ -1,0 +1,31 @@
+﻿{
+  "code": "trial-deep-sigil",
+  "behaviors": [{ "name": "Wearable" }],
+  "maxstacksize": 1,
+  "storageFlags": 128,
+  "attributes": {
+    "handbook": { "exclude": true },
+    "clothescategory": "neck",
+    "wearableAttachment": true,
+    "warmth": 0
+  },
+  "shape": { "base": "game:entity/humanoid/seraph/clothing/neck/simple-cross" },
+  "textures": {
+    "seraph": { "base": "game:block/transparent" },
+    "metal": { "base": "albase:trials/deep-sigil" },
+    "chain": { "base": "albase:trials/deep-sigil" },
+    "gem": { "base": "game:block/transparent" }
+  },
+  "renderAlphaTest": 0.25,
+  "guiTransform": {
+    "rotation": { "x": 174, "y": -128, "z": 6 },
+    "origin": { "x": 0.45, "y": 1.43, "z": 0.54 },
+    "scale": 3.5
+  },
+  "groundTransform": {
+    "translation": { "x": 0, "y": -0.05, "z": 0 },
+    "rotation": { "x": 0, "y": 0, "z": -90 },
+    "origin": { "x": 0.5, "y": 1.5, "z": 0.5 },
+    "scale": 3.06
+  }
+}

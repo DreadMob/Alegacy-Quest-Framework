@@ -1,0 +1,85 @@
+{
+  "components": [
+    {
+      "code": "intro",
+      "owner": "npc",
+      "type": "talk",
+      "text": [
+        { "value": "alstory:dialogue-heinrich-intro" }
+      ],
+      "jumpTo": "main"
+    },
+    {
+      "code": "main",
+      "owner": "player",
+      "type": "talk",
+      "text": [
+        { "value": "alstory:dialogue-heinrich-askilla", "jumpTo": "askilla", "conditions": [ { "variable": "player.alstory_vh_stage", "isValue": "start" } ] },
+        { "value": "alstory:dialogue-heinrich-whatshappening", "jumpTo": "whatshappening", "conditions": [ { "variable": "player.alstory_vh_stage", "isValue": "start" } ] },
+        { "value": "alstory:dialogue-heinrich-whathappened", "jumpTo": "whathappened", "conditions": [ { "variable": "player.alstory_vh_stage", "isValue": "start" } ] },
+        { "value": "alstory:dialogue-heinrich-howstop", "jumpTo": "howstop", "conditions": [ { "variable": "player.alstory_vh_stage", "isValue": "start" } ] },
+        { "value": "alstory:dialogue-heinrich-crystals", "jumpTo": "crystals", "conditions": [ { "variable": "player.alstory_vh_stage", "isValue": "start" } ] },
+        { "value": "alstory:dialogue-heinrich-closechoice", "jumpTo": "close" }
+      ]
+    },
+    {
+      "code": "whatshappening",
+      "owner": "npc",
+      "type": "talk",
+      "trigger": "markentityinteraction alstory:last_breath_collect alstory:heinrich heinrich",
+      "text": [
+        { "value": "alstory:dialogue-heinrich-whatshappening-answer" }
+      ],
+      "jumpTo": "main"
+    },
+    {
+      "code": "askilla",
+      "owner": "npc",
+      "type": "talk",
+      "trigger": "markentityinteraction alstory:last_breath_collect alstory:heinrich heinrich",
+      "text": [
+        { "value": "alstory:dialogue-heinrich-askilla-answer" }
+      ],
+      "jumpTo": "main"
+    },
+    {
+      "code": "whathappened",
+      "owner": "npc",
+      "type": "talk",
+      "trigger": "markentityinteraction alstory:last_breath_collect alstory:heinrich heinrich",
+      "text": [
+        { "value": "alstory:dialogue-heinrich-whathappened-answer" }
+      ],
+      "jumpTo": "main"
+    },
+    {
+      "code": "howstop",
+      "owner": "npc",
+      "type": "talk",
+      "trigger": "markentityinteraction alstory:last_breath_collect alstory:heinrich heinrich",
+      "text": [
+        { "value": "alstory:dialogue-heinrich-howstop-answer" }
+      ],
+      "jumpTo": "main"
+    },
+    {
+      "code": "crystals",
+      "owner": "npc",
+      "type": "talk",
+      "trigger": "markentityinteraction alstory:last_breath_collect alstory:heinrich heinrich",
+      "text": [
+        { "value": "alstory:dialogue-heinrich-crystals-answer" }
+      ],
+      "jumpTo": "main"
+    },
+    {
+      "code": "close",
+      "owner": "npc",
+      "type": "talk",
+      "trigger": "closedialogue",
+      "text": [
+        { "value": "alstory:dialogue-heinrich-close-answer" }
+      ]
+    }
+  ]
+}

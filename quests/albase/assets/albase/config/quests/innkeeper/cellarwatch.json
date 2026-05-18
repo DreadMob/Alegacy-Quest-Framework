@@ -1,0 +1,184 @@
+﻿{
+  "id": "albase:innkeeper-cellarwatch",
+  "cooldown": 30,
+  "predecessor": "albase:innkeeper-firstimpression",
+  "perPlayer": true,
+  "onAcceptedActions": [
+    {
+      "id": "playsound",
+      "args": [
+        "alegacyvsquest:sounds/queacc",
+        "0.175"
+      ]
+    },
+    {
+      "id": "addjournalentry",
+      "args": [
+        "albase:innkeeper",
+        "albase:innkeeper-cellarwatch",
+        "albase:innkeeper-cellarwatch-title",
+        "albase:innkeeper-cellarwatch-journal-text"
+      ]
+    },
+    {
+      "id": "randomkill",
+      "args": [
+        "3",
+        "1",
+        "4",
+        "albase:innkeeper-randomkill-notify",
+        "playsound 'albase:sounds/priest_target' 0.25",
+        "playsound 'sounds/tutorialstepsuccess' 0.7",
+        "drifter-normal",
+        "drifter-deep",
+        "shiver"
+      ]
+    }
+  ],
+  "actionObjectives": [
+    {
+      "id": "randomkill",
+      "objectiveId": "kill0",
+      "args": [
+        "albase:innkeeper-cellarwatch",
+        "0"
+      ]
+    },
+    {
+      "id": "timeofday",
+      "args": [
+        "night",
+        "kill0"
+      ]
+    },
+    {
+      "id": "randomkill",
+      "objectiveId": "kill1",
+      "args": [
+        "albase:innkeeper-cellarwatch",
+        "1"
+      ]
+    },
+    {
+      "id": "timeofday",
+      "args": [
+        "night",
+        "kill1"
+      ]
+    },
+    {
+      "id": "randomkill",
+      "objectiveId": "kill2",
+      "args": [
+        "albase:innkeeper-cellarwatch",
+        "2"
+      ]
+    },
+    {
+      "id": "timeofday",
+      "args": [
+        "night",
+        "kill2"
+      ]
+    }
+  ],
+  "killObjectives": [],
+  "itemRewards": [
+    {
+      "itemCode": "game:gear-rusty",
+      "amount": 2
+    },
+    {
+      "itemCode": "game:redmeat-raw",
+      "amount": 12
+    },
+    {
+      "itemCode": "game:bandage-clean",
+      "amount": 2
+    },
+    {
+      "itemCode": "game:redmeat-cured",
+      "amount": 8
+    },
+    {
+      "itemCode": "game:fat",
+      "amount": 3
+    }
+  ],
+  "randomItemRewards": {
+    "selectAmount": 2,
+    "items": [
+      {
+        "itemCode": "game:redmeat-raw",
+        "minAmount": 2,
+        "maxAmount": 5
+      },
+      {
+        "itemCode": "game:redmeat-cured",
+        "minAmount": 3,
+        "maxAmount": 6
+      },
+      {
+        "itemCode": "game:bread-rye-perfect",
+        "minAmount": 1,
+        "maxAmount": 2
+      },
+      {
+        "itemCode": "game:bandage-clean",
+        "minAmount": 1,
+        "maxAmount": 3
+      },
+      {
+        "itemCode": "game:flaxtwine",
+        "minAmount": 2,
+        "maxAmount": 6
+      },
+      {
+        "itemCode": "game:resin",
+        "minAmount": 1,
+        "maxAmount": 2
+      },
+      {
+        "itemCode": "game:fat",
+        "minAmount": 1,
+        "maxAmount": 2
+      }
+    ]
+  },
+  "actionRewards": [
+    {
+      "id": "addreputation",
+      "args": [
+        "npc",
+        "albase:innkeeper",
+        "100"
+      ]
+    },
+    {
+      "id": "playsound",
+      "args": [
+        "game:sounds/effect/cashregister",
+        "0.35"
+      ]
+    },
+    {
+      "id": "showquestfinaldialog",
+      "args": [
+        "albase:dialogue-innkeeper-final-title",
+        "albase:dialogue-innkeeper-cellarwatch-final-text",
+        "albase:dialogue-innkeeper-final-option"
+      ]
+    },
+    {
+      "id": "addjournalentry",
+      "args": [
+        "albase:innkeeper",
+        "albase:innkeeper-cellarwatch",
+        "albase:innkeeper-cellarwatch-title",
+        "overwrite",
+        "albase:innkeeper-cellarwatch-reward-journal-text"
+      ]
+    }
+  ]
+}
+

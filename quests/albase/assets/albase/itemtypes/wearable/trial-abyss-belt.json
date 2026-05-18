@@ -1,0 +1,30 @@
+﻿{
+  "code": "trial-abyss-belt",
+  "behaviors": [{ "name": "Wearable" }],
+  "maxstacksize": 1,
+  "storageFlags": 128,
+  "attributes": {
+    "handbook": { "exclude": true },
+    "clothescategory": "waist",
+    "wearableAttachment": true,
+    "warmth": 0
+  },
+  "shape": { "base": "game:entity/humanoid/seraph/clothing/waist/midsummer" },
+  "textures": {
+    "seraph": { "base": "game:block/transparent" },
+    "midsummer": { "base": "albase:trials/abyss-belt" }
+  },
+  "renderAlphaTest": 0.25,
+  "guiTransform": {
+    "translation": { "x": 0, "y": 0, "z": 19 },
+    "rotation": { "x": 174, "y": -45, "z": 23 },
+    "origin": { "x": 0.4, "y": 1.1, "z": 0.4 },
+    "scale": 2.85
+  },
+  "groundTransform": {
+    "translation": { "x": 0.05, "y": -0.21, "z": 0 },
+    "rotation": { "x": 0, "y": 0, "z": 0 },
+    "origin": { "x": 0.5, "y": 0.5, "z": 0.5299 },
+    "scale": 2.72
+  }
+}

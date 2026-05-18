@@ -1,0 +1,52 @@
+{
+  "rerollGroups": [
+    {
+      "id": "ossuarywarden",
+      "name": "Страж Оссуария",
+      "itemsRequired": 2,
+      "applyQuality": false,
+      "rewardItems": [
+        "albase:bosshunt-reward-miner-belt",
+        "albase:bosshunt-reward-bloodthirsty"
+      ]
+    },
+    {
+      "id": "ashenlurker",
+      "name": "Пепельный Преследователь",
+      "itemsRequired": 2,
+      "applyQuality": false,
+      "rewardItems": [
+        "albase:bosshunt-reward-archer-gloves",
+        "albase:bosshunt-reward-ashen-sigil"
+      ]
+    },
+    {
+      "id": "bonecolossus",
+      "name": "Псарь Оссуария",
+      "itemsRequired": 2,
+      "applyQuality": false,
+      "rewardItems": [
+        "albase:bosshunt-reward-sea-spirit",
+        "albase:bosshunt-reward-life-amulet",
+        "albase:bosshunt-reward-ultrawarm-coat"
+      ]
+    },
+    {
+      "id": "subductionmaw",
+      "name": "Субдукционная Пасть",
+      "itemsRequired": 2,
+      "applyQuality": false,
+      "rewardItems": [
+        "albase:bosshunt-reward-duelist",
+        "albase:bosshunt-reward-subduction-filter",
+        "albase:bosshunt-reward-subduction-quiver"
+      ]
+    }
+  ],
+  "questToGroupMapping": {
+    "albase:bosshunt-ossuarywarden": "ossuarywarden",
+    "albase:bosshunt-ashenlurker": "ashenlurker",
+    "albase:bosshunt-bonecolossus": "bonecolossus",
+    "albase:bosshunt-subduction-maw": "subductionmaw"
+  }
+}

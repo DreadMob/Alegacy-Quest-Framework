@@ -1,0 +1,144 @@
+{
+  "actionItems": [
+    {
+      "id": "vsquestdebugging:verybigtest",
+      "itemCode": "vsquestdebugging:quest-scarf",
+      "name": "<font color=\"#8B5CF6\">Шарфык</font>",
+      "description": "<font color=\"#60A5FA\">Шарфык фы фы фы</font>",
+      "actions": [],
+      "attributes": {
+        "walkspeed": 0.05,
+        "hungerrate": -0.1,
+        "healingeffectiveness": 0.1
+      },
+      "showAttributes": [
+        "walkspeed",
+        "hungerrate",
+        "healingeffectiveness"
+      ],
+      "hideVanillaTooltips": []
+    },
+    {
+      "id": "vsquestdebugging:damage30",
+      "itemCode": "alegacyvsquest:debugtool",
+      "name": "<font color=\"#EF4444\">Debug: Damage 30</font>",
+      "description": "<font color=\"#60A5FA\">ПКМ по хотбару: наносит 30 урона выбранной энтити.</font>",
+      "actions": [
+        {
+          "id": "damageentity",
+          "args": [
+            "30"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vsquestdebugging:damage50",
+      "itemCode": "alegacyvsquest:debugtool",
+      "name": "<font color=\"#EF4444\">Debug: Damage 50</font>",
+      "description": "<font color=\"#60A5FA\">ПКМ по хотбару: наносит 50 урона выбранной энтити.</font>",
+      "actions": [
+        {
+          "id": "damageentity",
+          "args": [
+            "50"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vsquestdebugging:damage80",
+      "itemCode": "alegacyvsquest:debugtool",
+      "name": "<font color=\"#EF4444\">Debug: Damage 80</font>",
+      "description": "<font color=\"#60A5FA\">ПКМ по хотбару: наносит 80 урона выбранной энтити.</font>",
+      "actions": [
+        {
+          "id": "damageentity",
+          "args": [
+            "80"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vsquestdebugging:protection5",
+      "itemCode": "game:clothes-neck-malefactor-pendant",
+      "name": "<font color=\"#22C55E\">Debug: Protection +5</font>",
+      "description": "<font color=\"#60A5FA\">Тестовый предмет. Даёт плоскую защиту: -5 урона.</font>",
+      "actions": [],
+      "attributes": {
+        "protection": 5
+      },
+      "showAttributes": [
+        "protection"
+      ],
+      "hideVanillaTooltips": [
+        "armor",
+        "protection",
+        "warmth",
+        "walkspeed",
+        "modsource"
+      ]
+    },
+    {
+      "id": "vsquestdebugging:protection10",
+      "itemCode": "game:clothes-neck-malefactor-pendant",
+      "name": "<font color=\"#22C55E\">Debug: Protection +10</font>",
+      "description": "<font color=\"#60A5FA\">Тестовый предмет. Даёт плоскую защиту: -10 урона.</font>",
+      "actions": [],
+      "attributes": {
+        "protection": 10
+      },
+      "showAttributes": [
+        "protection"
+      ],
+      "hideVanillaTooltips": [
+        "armor",
+        "protection",
+        "warmth",
+        "walkspeed",
+        "modsource"
+      ]
+    },
+    {
+      "id": "vsquestdebugging:protection20",
+      "itemCode": "game:clothes-neck-malefactor-pendant",
+      "name": "<font color=\"#22C55E\">Debug: Protection +20</font>",
+      "description": "<font color=\"#60A5FA\">Тестовый предмет. Даёт плоскую защиту: -20 урона.</font>",
+      "actions": [],
+      "attributes": {
+        "protection": 20
+      },
+      "showAttributes": [
+        "protection"
+      ],
+      "hideVanillaTooltips": [
+        "armor",
+        "protection",
+        "warmth",
+        "walkspeed",
+        "modsource"
+      ]
+    },
+    {
+      "id": "vsquestdebugging:protection30",
+      "itemCode": "game:clothes-neck-malefactor-pendant",
+      "name": "<font color=\"#22C55E\">Debug: Protection +30</font>",
+      "description": "<font color=\"#60A5FA\">Тестовый предмет. Даёт плоскую защиту: -30 урона.</font>",
+      "actions": [],
+      "attributes": {
+        "protection": 30
+      },
+      "showAttributes": [
+        "protection"
+      ],
+      "hideVanillaTooltips": [
+        "armor",
+        "protection",
+        "warmth",
+        "walkspeed",
+        "modsource"
+      ]
+    }
+  ]
+}

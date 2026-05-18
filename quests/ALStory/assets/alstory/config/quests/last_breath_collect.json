@@ -1,0 +1,196 @@
+{
+  "id": "alstory:last_breath_collect",
+  "descriptionLangKey": "alstory:last_breath_collect-desc",
+  "cooldown": 800,
+  "perPlayer": true,
+  "stages": [
+    {
+      "stageTitleLangKey": "alstory:last_breath_collect-stage1-title",
+      "gatherObjectives": [
+        {
+          "validCodes": ["alstory-armor-helm"],
+          "demand": 1
+        },
+        {
+          "validCodes": ["alstory-armor-chest"],
+          "demand": 1
+        }
+      ],
+      "onStageCompleteActions": [
+        {
+          "id": "playsound",
+          "args": ["sounds/tutorialstepsuccess"]
+        },
+        {
+          "id": "addjournalentry",
+          "args": ["alstory:last_breath_collect", "alstory:last_breath_collect-journal", "alstory:last_breath_collect-stage1-journal", "alstory:last_breath_collect-stage1-journal-desc"]
+        },
+        {
+          "id": "setquestdescription",
+          "args": ["alstory:last_breath_collect", "alstory:last_breath_collect-desc-step2"]
+        },
+        {
+          "id": "setplayervariable",
+          "args": ["alstory:armorparts", "2"]
+        },
+        {
+          "id": "addplayerattribute",
+          "args": ["alstory_vh_stage", "start"]
+        },
+        {
+          "id": "consumeactionitem",
+          "args": ["alstory-armor-helm", "1"]
+        },
+        {
+          "id": "consumeactionitem",
+          "args": ["alstory-armor-chest", "1"]
+        }
+      ]
+    },
+    {
+      "stageTitleLangKey": "alstory:last_breath_collect-stage2-title",
+      "actionObjectives": [
+        {
+          "id": "interactwithentity",
+          "objectiveId": "heinrich",
+          "onCompleteActions": "addjournalentry alstory:last_breath_collect alstory:last_breath_collect-journal alstory:last_breath_collect-journal-vh-heinrich alstory:last_breath_collect-vh-heinrich-desc; questitem alstory-keepers-key",
+          "args": [
+            "alstory:last_breath_collect",
+            "alstory:heinrich",
+            "1"
+          ]
+        },
+        {
+          "id": "interactat",
+          "objectiveId": "crystal1",
+          "onCompleteActions": "playsound game:sounds/effect/translocate-breakdimension 0.8",
+          "args": [
+            "510928,182,499371|510928,183,499371|510928,184,499371|510928,185,499371|510928,182,499370|510928,183,499370|510928,184,499370|510928,185,499370|510927,182,499370|510927,183,499370|510927,184,499370|510927,185,499370|510927,182,499371|510927,183,499371|510927,184,499371|510927,185,499371",
+            "alstory-keepers-key",
+            "5"
+          ]
+        },
+        {
+          "id": "interactat",
+          "objectiveId": "crystal2",
+          "onCompleteActions": "playsound game:sounds/effect/translocate-breakdimension 0.8",
+          "args": [
+            "510955,159,499229|510955,160,499229|510955,161,499229",
+            "alstory-keepers-key",
+            "5"
+          ]
+        },
+        {
+          "id": "interactat",
+          "objectiveId": "crystal3",
+          "onCompleteActions": "playsound game:sounds/effect/translocate-breakdimension 0.8",
+          "args": [
+            "510976,173,499282|510976,174,499282|510976,175,499282|510975,173,499282|510975,174,499282|510975,175,499282|510974,173,499282|510974,174,499282|510974,175,499282",
+            "alstory-keepers-key",
+            "5"
+          ]
+        },
+        {
+          "id": "interactwithentity",
+          "objectiveId": "illa",
+          "onCompleteActions": "addjournalentry alstory:last_breath_collect alstory:last_breath_collect-journal alstory:last_breath_collect-journal-vh-illa alstory:last_breath_collect-vh-illa-desc; questitem alstory-armor-legs; setquestdescription alstory:last_breath_collect alstory:last_breath_collect-desc-step4",
+          "args": [
+            "alstory:last_breath_collect",
+            "alstory:illa",
+            "1"
+          ]
+        }
+      ],
+      "onStageCompleteActions": [
+        {
+          "id": "playsound",
+          "args": ["sounds/tutorialstepsuccess"]
+        },
+        {
+          "id": "addjournalentry",
+          "args": ["alstory:last_breath_collect", "alstory:last_breath_collect-journal", "alstory:last_breath_collect-journal-crystals", "alstory:last_breath_collect-journal-crystals-desc"]
+        },
+        {
+          "id": "consumeactionitem",
+          "args": ["alstory-keepers-key", "1"]
+        },
+        {
+          "id": "addjournalentry",
+          "args": ["alstory:last_breath_collect", "alstory:last_breath_collect-journal", "alstory:last_breath_collect-stage2-journal", "alstory:last_breath_collect-stage2-journal-desc"]
+        },
+        {
+          "id": "setquestdescription",
+          "args": ["alstory:last_breath_collect", "alstory:last_breath_collect-desc-step3"]
+        },
+        {
+          "id": "setplayervariable",
+          "args": ["alstory:armorparts", "3"]
+        },
+        {
+          "id": "addplayerattribute",
+          "args": ["alstory_vh_stage", "crystals"]
+        },
+        {
+          "id": "consumeactionitem",
+          "args": ["alstory-armor-legs", "1"]
+        },
+        {
+          "id": "addplayerattribute",
+          "args": ["alstory_nj_stage", "start"]
+        }
+      ]
+    },
+    {
+      "stageTitleLangKey": "alstory:necropolis_judgment-stage-title",
+      "actionObjectives": [
+        {
+          "id": "killactiontarget",
+          "objectiveId": "loranboss",
+          "onCompleteActions": "addjournalentry alstory:last_breath_collect alstory:last_breath_collect-journal alstory:last_breath_collect-journal-nj-step3 alstory:necropolis_judgment-journal-step3-desc; addplayerattribute alstory_nj_stage loranboss; addplayerint alstory:loranbosskilled 1 1 alstory:loranbosskilledonce; questitem alstory-tablet-epitaph; questitem alstory-note-necropolisfragment",
+          "args": [
+            "alstory:last_breath_collect",
+            "loranboss",
+            "alstory:necropolis_judgment:loran",
+            "1"
+          ]
+        }
+      ],
+      "onStageCompleteActions": [
+        {
+          "id": "playsound",
+          "args": ["alegacyvsquest:sounds/quecomp", "0.175"]
+        },
+        {
+          "id": "addjournalentry",
+          "args": ["alstory:last_breath_collect", "alstory:last_breath_collect-journal", "alstory:necropolis_judgment-complete-journal", "alstory:necropolis_judgment-complete-journal-desc"]
+        },
+        {
+          "id": "setquestdescription",
+          "args": ["alstory:last_breath_collect", "alstory:last_breath_collect-desc-complete"]
+        }
+      ]
+    }
+  ],
+  "actionRewards": [
+    {
+      "id": "giveactionitem",
+      "args": ["alstory-doomed-amulet", "1"]
+    },
+    {
+      "id": "giveactionitem",
+      "args": ["alstory-book-crackedbell", "1"]
+    },
+    {
+      "id": "playsound",
+      "args": ["sounds/tutorialstepsuccess"]
+    },
+    {
+      "id": "showquestfinaldialog",
+      "args": [
+        "alstory:final-necropolis-title",
+        "alstory:final-necropolis-text",
+        "alstory:final-necropolis-option"
+      ]
+    }
+  ]
+}

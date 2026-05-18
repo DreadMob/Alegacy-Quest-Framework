@@ -1,0 +1,81 @@
+{
+  "components": [
+    {
+      "code": "intro",
+      "owner": "npc",
+      "type": "talk",
+      "text": [
+        { "value": "alstory:dialogue-illa-intro" }
+      ],
+      "jumpTo": "main"
+    },
+    {
+      "code": "main",
+      "owner": "player",
+      "type": "talk",
+      "text": [
+        { "value": "alstory:dialogue-illa-stopmusic", "jumpTo": "stopmusic", "conditions": [ { "variable": "player.alstory_vh_stage", "isValue": "crystals" } ] },
+        { "value": "alstory:dialogue-illa-loransaved", "jumpTo": "loransaved", "conditions": [ { "variable": "player.alstory_vh_stage", "isValue": "crystals" } ] },
+        { "value": "alstory:dialogue-illa-feel", "jumpTo": "feel", "conditions": [ { "variable": "player.alstory_vh_stage", "isValue": "crystals" } ] },
+        { "value": "alstory:dialogue-illa-whatnow", "jumpTo": "whatnow", "conditions": [ { "variable": "player.alstory_vh_stage", "isValue": "crystals" } ] },
+        { "value": "alstory:dialogue-illa-whereloran", "jumpTo": "whereloran" },
+        { "value": "alstory:dialogue-illa-closechoice", "jumpTo": "close" }
+      ]
+    },
+    {
+      "code": "stopmusic",
+      "owner": "npc",
+      "type": "talk",
+      "trigger": "markentityinteraction alstory:last_breath_collect alstory:illa illa; addplayerint alstory:illareward 1 1 alstory:illarewardonce; questitem alstory-armor-legs",
+      "text": [
+        { "value": "alstory:dialogue-illa-stopmusic-answer" }
+      ],
+      "jumpTo": "main"
+    },
+    {
+      "code": "loransaved",
+      "owner": "npc",
+      "type": "talk",
+      "text": [
+        { "value": "alstory:dialogue-illa-loransaved-answer" }
+      ],
+      "jumpTo": "main"
+    },
+    {
+      "code": "feel",
+      "owner": "npc",
+      "type": "talk",
+      "text": [
+        { "value": "alstory:dialogue-illa-feel-answer" }
+      ],
+      "jumpTo": "main"
+    },
+    {
+      "code": "whatnow",
+      "owner": "npc",
+      "type": "talk",
+      "text": [
+        { "value": "alstory:dialogue-illa-whatnow-answer" }
+      ],
+      "jumpTo": "main"
+    },
+    {
+      "code": "whereloran",
+      "owner": "npc",
+      "type": "talk",
+      "text": [
+        { "value": "alstory:dialogue-illa-whereloran-answer" }
+      ],
+      "jumpTo": "main"
+    },
+    {
+      "code": "close",
+      "owner": "npc",
+      "type": "talk",
+      "trigger": "closedialogue",
+      "text": [
+        { "value": "alstory:dialogue-illa-close-answer" }
+      ]
+    }
+  ]
+}

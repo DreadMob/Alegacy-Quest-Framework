@@ -1,0 +1,15 @@
+{
+  "type": "content",
+  "modid": "newyear2026",
+  "name": "New Year 2026 Quest Pack",
+  "side": "universal",
+  "authors": [
+    "AshenLegacy"
+  ],
+  "description": "NewYear2026 quest.",
+  "version": "1.1.1",
+  "dependencies": {
+    "game": "1.21.6",
+    "alegacyvsquest": "*"
+  }
+}

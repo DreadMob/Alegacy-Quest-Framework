@@ -1,0 +1,160 @@
+﻿{
+  "id": "albase:innkeeper-nightrunhunt",
+  "cooldown": 30,
+  "predecessor": "albase:innkeeper-firstimpression",
+  "perPlayer": true,
+  "onAcceptedActions": [
+    {
+      "id": "playsound",
+      "args": [
+        "alegacyvsquest:sounds/queacc",
+        "0.175"
+      ]
+    },
+    {
+      "id": "resetwalkdistance",
+      "args": [
+        "albase:innkeeper-nightrunhunt",
+        "1"
+      ]
+    },
+    {
+      "id": "addjournalentry",
+      "args": [
+        "albase:innkeeper",
+        "albase:innkeeper-nightrunhunt",
+        "albase:innkeeper-nightrunhunt-title",
+        "albase:innkeeper-nightrunhunt-journal-text"
+      ]
+    },
+    {
+      "id": "randomkill",
+      "args": [
+        "1",
+        "2",
+        "4",
+        "albase:innkeeper-randomkill-notify",
+        "playsound 'albase:sounds/priest_target' 0.25",
+        "playsound 'sounds/tutorialstepsuccess' 0.7",
+        "wolf"
+      ]
+    }
+  ],
+  "actionObjectives": [
+    {
+      "id": "randomkill",
+      "objectiveId": "kill0",
+      "args": [
+        "albase:innkeeper-nightrunhunt",
+        "0"
+      ]
+    },
+    {
+      "id": "timeofday",
+      "args": [
+        "night",
+        "kill0"
+      ]
+    },
+    {
+      "id": "walkdistance",
+      "objectiveId": "walk",
+      "args": [
+        "albase:innkeeper-nightrunhunt",
+        "1400"
+      ]
+    },
+    {
+      "id": "timeofday",
+      "args": [
+        "night",
+        "walk"
+      ]
+    }
+  ],
+  "killObjectives": [],
+  "itemRewards": [
+    {
+      "itemCode": "game:gear-rusty",
+      "amount": 2
+    },
+    {
+      "itemCode": "game:redmeat-cured",
+      "amount": 9
+    },
+    {
+      "itemCode": "game:bandage-clean",
+      "amount": 2
+    },
+    {
+      "itemCode": "game:torch-basic-extinct-up",
+      "amount": 1
+    }
+  ],
+  "randomItemRewards": {
+    "selectAmount": 1,
+    "items": [
+      {
+        "itemCode": "game:redmeat-raw",
+        "minAmount": 2,
+        "maxAmount": 4
+      },
+      {
+        "itemCode": "game:flaxtwine",
+        "minAmount": 2,
+        "maxAmount": 5
+      },
+      {
+        "itemCode": "game:bread-spelt-perfect",
+        "minAmount": 1,
+        "maxAmount": 2
+      },
+      {
+        "itemCode": "game:resin",
+        "minAmount": 1,
+        "maxAmount": 2
+      },
+      {
+        "itemCode": "game:fat",
+        "minAmount": 1,
+        "maxAmount": 2
+      }
+    ]
+  },
+  "actionRewards": [
+    {
+      "id": "addreputation",
+      "args": [
+        "npc",
+        "albase:innkeeper",
+        "100"
+      ]
+    },
+    {
+      "id": "playsound",
+      "args": [
+        "game:sounds/effect/cashregister",
+        "0.35"
+      ]
+    },
+    {
+      "id": "showquestfinaldialog",
+      "args": [
+        "albase:dialogue-innkeeper-final-title",
+        "albase:dialogue-innkeeper-nightrunhunt-final-text",
+        "albase:dialogue-innkeeper-final-option"
+      ]
+    },
+    {
+      "id": "addjournalentry",
+      "args": [
+        "albase:innkeeper",
+        "albase:innkeeper-nightrunhunt",
+        "albase:innkeeper-nightrunhunt-title",
+        "overwrite",
+        "albase:innkeeper-nightrunhunt-reward-journal-text"
+      ]
+    }
+  ]
+}
+

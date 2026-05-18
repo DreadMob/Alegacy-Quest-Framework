@@ -1,0 +1,39 @@
+Alegacy Quest Framework License
+
+Copyright (c) 2024-2026 DreadMob, Flajakay and contributors
+
+This project originally began as a fork/inspired rewrite of VSQuest by G3rste,
+which was licensed under MIT. The current project has since been fully rewritten
+and is distributed as an independent project under this license. This repository
+does not contain code or assets from the original project.
+
+TERMS OF USE:
+
+1. VIEWING AND LEARNING
+   You may view, study, and learn from this source code.
+
+2. QUEST PACKS (CONTENT CREATION)
+   You are free to create your own quest packs (content mods) that run
+   on top of this framework. Quest packs do not require permission.
+
+3. NO FORKING OR REDISTRIBUTION
+   You may NOT fork, copy, redistribute, or create derivative works
+   based on this framework's source code without explicit written
+   permission from the authors.
+
+4. MODIFICATIONS
+   If you wish to modify, adapt, or build upon the framework code itself,
+   you MUST contact us first via Discord:
+   https://discord.gg/aK4GtFpnt
+
+5. NO WARRANTY
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+   AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+   SOFTWARE.
+
+For questions or permission requests, join our Discord:
+https://discord.gg/aK4GtFpnt

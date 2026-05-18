@@ -1,0 +1,55 @@
+{
+  "npcId": "albase:trialwarden",
+  "nameKey": "albase:trial-warden-name",
+  "titleKey": "albase:trial-warden-title",
+  "questGiver": true,
+  "trialActiveOnly": true,
+  "trialMaxTier": 3,
+  "shop": {
+    "currencyKey": "albase:trial-currency-name",
+    "items": [
+      {
+        "itemCode": "case:tier1",
+        "nameKey": "albase:trial-case-tier1",
+        "cost": 20,
+        "requiredReputation": 0,
+        "maxPurchases": -1,
+        "caseTier": 1,
+        "casePool": ["albase:trial-shadow-earring", "albase:trial-rift-bracelet", "albase:trial-void-pendant"]
+      },
+      {
+        "itemCode": "case:tier2",
+        "nameKey": "albase:trial-case-tier2",
+        "cost": 50,
+        "requiredReputation": 100,
+        "maxPurchases": -1,
+        "caseTier": 2,
+        "casePool": ["albase:trial-void-cloak", "albase:trial-abyss-belt", "albase:trial-deep-sigil"]
+      },
+      {
+        "itemCode": "case:tier3",
+        "nameKey": "albase:trial-case-tier3",
+        "cost": 120,
+        "requiredReputation": 300,
+        "maxPurchases": -1,
+        "caseTier": 3,
+        "casePool": ["albase:trial-void-cloak", "albase:trial-abyss-belt", "albase:trial-deep-sigil", "albase:trial-bow", "albase:trial-abyss-pendant", "albase:trial-void-ring"]
+      },
+      {
+        "itemCode": "albase:trial-bow",
+        "nameKey": "item-albase:trial-bow",
+        "cost": 150,
+        "requiredReputation": 400,
+        "maxPurchases": 1,
+        "fixedQuality": 2
+      },
+      {
+        "itemCode": "albase:trial-abyss-mask",
+        "nameKey": "albase:trial-abyss-mask-name",
+        "cost": 200,
+        "requiredReputation": 600,
+        "maxPurchases": 1
+      }
+    ]
+  }
+}

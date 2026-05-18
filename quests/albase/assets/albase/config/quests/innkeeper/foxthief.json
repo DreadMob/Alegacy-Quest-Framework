@@ -1,0 +1,143 @@
+﻿{
+  "id": "albase:innkeeper-foxthief",
+  "cooldown": 30,
+  "predecessor": "albase:innkeeper-firstimpression",
+  "perPlayer": true,
+  "onAcceptedActions": [
+    {
+      "id": "playsound",
+      "args": [
+        "alegacyvsquest:sounds/queacc",
+        "0.175"
+      ]
+    },
+    {
+      "id": "addjournalentry",
+      "args": [
+        "albase:innkeeper",
+        "albase:innkeeper-foxthief",
+        "albase:innkeeper-foxthief-title",
+        "albase:innkeeper-foxthief-journal-text"
+      ]
+    },
+    {
+      "id": "randomkill",
+      "args": [
+        "1",
+        "1",
+        "2",
+        "albase:innkeeper-randomkill-notify",
+        "playsound 'albase:sounds/priest_target' 0.25",
+        "playsound 'sounds/tutorialstepsuccess' 0.7",
+        "fox"
+      ]
+    }
+  ],
+  "actionObjectives": [
+    {
+      "id": "randomkill",
+      "args": [
+        "albase:innkeeper-foxthief"
+      ]
+    }
+  ],
+  "killObjectives": [],
+  "itemRewards": [
+    {
+      "itemCode": "game:gear-rusty",
+      "amount": 1
+    },
+    {
+      "itemCode": "game:redmeat-raw",
+      "amount": 10
+    },
+    {
+      "itemCode": "game:bread-spelt-perfect",
+      "amount": 2
+    },
+    {
+      "itemCode": "game:poultry-cured",
+      "amount": 6
+    },
+    {
+      "itemCode": "game:torch-basic-extinct-up",
+      "amount": 1
+    }
+  ],
+  "randomItemRewards": {
+    "selectAmount": 2,
+    "items": [
+      {
+        "itemCode": "game:redmeat-raw",
+        "minAmount": 2,
+        "maxAmount": 5
+      },
+      {
+        "itemCode": "game:bread-spelt-perfect",
+        "minAmount": 1,
+        "maxAmount": 2
+      },
+      {
+        "itemCode": "game:poultry-cured",
+        "minAmount": 1,
+        "maxAmount": 12
+      },
+      {
+        "itemCode": "game:torch-basic-extinct-up",
+        "minAmount": 1,
+        "maxAmount": 3
+      },
+      {
+        "itemCode": "game:bandage-clean",
+        "minAmount": 1,
+        "maxAmount": 2
+      },
+      {
+        "itemCode": "game:resin",
+        "minAmount": 1,
+        "maxAmount": 2
+      },
+      {
+        "itemCode": "game:fat",
+        "minAmount": 1,
+        "maxAmount": 2
+      }
+    ]
+  },
+  "actionRewards": [
+    {
+      "id": "addreputation",
+      "args": [
+        "npc",
+        "albase:innkeeper",
+        "100"
+      ]
+    },
+    {
+      "id": "playsound",
+      "args": [
+        "game:sounds/effect/cashregister",
+        "0.35"
+      ]
+    },
+    {
+      "id": "showquestfinaldialog",
+      "args": [
+        "albase:dialogue-innkeeper-final-title",
+        "albase:dialogue-innkeeper-foxthief-final-text",
+        "albase:dialogue-innkeeper-final-option"
+      ]
+    },
+    {
+      "id": "addjournalentry",
+      "args": [
+        "albase:innkeeper",
+        "albase:innkeeper-foxthief",
+        "albase:innkeeper-foxthief-title",
+        "overwrite",
+        "albase:innkeeper-foxthief-reward-journal-text"
+      ]
+    }
+  ]
+}
+

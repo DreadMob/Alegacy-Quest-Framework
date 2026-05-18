@@ -1,0 +1,343 @@
+{
+  "code": "crypt-mirror-clone",
+  "class": "EntityPlayerBot",
+  "tags": ["alegacy-boss"],
+  "canClimb": true,
+  "hitboxSize": { "x": 0.6, "y": 1.75 },
+  "eyeHeight": 1.65,
+  "drops": [],
+  "attributes": {
+    "skinnableParts": [
+      {
+        "code": "baseskin",
+        "type": "texture",
+        "variants": [
+          { "code": "skin1", "texture": "entity/humanoid/seraphskinparts/body/skin1" },
+          { "code": "skin2", "texture": "entity/humanoid/seraphskinparts/body/skin2" },
+          { "code": "skin3", "texture": "entity/humanoid/seraphskinparts/body/skin3" },
+          { "code": "skin4", "texture": "entity/humanoid/seraphskinparts/body/skin4" },
+          { "code": "skin5", "texture": "entity/humanoid/seraphskinparts/body/skin5" },
+          { "code": "skin6", "texture": "entity/humanoid/seraphskinparts/body/skin6" },
+          { "code": "skin7", "texture": "entity/humanoid/seraphskinparts/body/skin7" },
+          { "code": "skin8", "texture": "entity/humanoid/seraphskinparts/body/skin8" },
+          { "code": "skin9", "texture": "entity/humanoid/seraphskinparts/body/skin9" },
+          { "code": "skin10", "texture": "entity/humanoid/seraphskinparts/body/skin10" },
+          { "code": "skin11", "texture": "entity/humanoid/seraphskinparts/body/skin11" },
+          { "code": "skin12", "texture": "entity/humanoid/seraphskinparts/body/skin12" },
+          { "code": "skin13", "texture": "entity/humanoid/seraphskinparts/body/skin13" },
+          { "code": "skin14", "texture": "entity/humanoid/seraphskinparts/body/skin14" },
+          { "code": "skin15", "texture": "entity/humanoid/seraphskinparts/body/skin15" },
+          { "code": "skin16", "texture": "entity/humanoid/seraphskinparts/body/skin16" },
+          { "code": "skin17", "texture": "entity/humanoid/seraphskinparts/body/skin17" },
+          { "code": "skin18", "texture": "entity/humanoid/seraphskinparts/body/skin18" },
+          { "code": "skin19", "texture": "entity/humanoid/seraphskinparts/body/skin19" },
+          { "code": "skin20", "texture": "entity/humanoid/seraphskinparts/body/skin20" }
+        ]
+      },
+      {
+        "code": "eyecolor",
+        "type": "texture",
+        "textureRenderTo": { "x": 109, "y": 0 },
+        "variants": [
+          { "code": "acid-green", "texture": "entity/humanoid/seraphskinparts/eyes/acid-green" },
+          { "code": "aquamarine", "texture": "entity/humanoid/seraphskinparts/eyes/aquamarine" },
+          { "code": "azure", "texture": "entity/humanoid/seraphskinparts/eyes/azure" },
+          { "code": "bitter-lemon", "texture": "entity/humanoid/seraphskinparts/eyes/bitter-lemon" },
+          { "code": "cadmium-orange", "texture": "entity/humanoid/seraphskinparts/eyes/cadmium-orange" },
+          { "code": "citron", "texture": "entity/humanoid/seraphskinparts/eyes/citron" },
+          { "code": "dark-green", "texture": "entity/humanoid/seraphskinparts/eyes/dark-green" },
+          { "code": "forest-green", "texture": "entity/humanoid/seraphskinparts/eyes/forest-green" },
+          { "code": "goldenrod", "texture": "entity/humanoid/seraphskinparts/eyes/goldenrod" },
+          { "code": "jade", "texture": "entity/humanoid/seraphskinparts/eyes/jade" },
+          { "code": "lavander", "texture": "entity/humanoid/seraphskinparts/eyes/lavander" },
+          { "code": "malachite", "texture": "entity/humanoid/seraphskinparts/eyes/malachite" },
+          { "code": "mantis", "texture": "entity/humanoid/seraphskinparts/eyes/mantis" },
+          { "code": "midnight", "texture": "entity/humanoid/seraphskinparts/eyes/midnight" },
+          { "code": "phthalo-blue", "texture": "entity/humanoid/seraphskinparts/eyes/phthalo-blue" },
+          { "code": "purple", "texture": "entity/humanoid/seraphskinparts/eyes/purple" },
+          { "code": "sand", "texture": "entity/humanoid/seraphskinparts/eyes/sand" },
+          { "code": "sapphire", "texture": "entity/humanoid/seraphskinparts/eyes/sapphire" }
+        ]
+      },
+      {
+        "code": "underwear",
+        "type": "texture",
+        "useDropDown": true,
+        "textureRenderTo": { "x": 0, "y": 0 },
+        "variants": [
+          { "code": "twopiece", "texture": "entity/humanoid/seraphskinparts/underwear/twopiece" },
+          { "code": "leotard", "texture": "entity/humanoid/seraphskinparts/underwear/leotard" },
+          { "code": "breeches", "texture": "entity/humanoid/seraphskinparts/underwear/breeches" }
+        ]
+      },
+      {
+        "code": "voicetype",
+        "type": "voice",
+        "useDropDown": true,
+        "variants": [
+          { "code": "altoflute", "sound": "sounds/voice/altoflute" },
+          { "code": "harmonica", "sound": "sounds/voice/harmonica" },
+          { "code": "oboe", "sound": "sounds/voice/oboe" },
+          { "code": "clarinete", "sound": "sounds/voice/clarinete" },
+          { "code": "accordion", "sound": "sounds/voice/accordion" },
+          { "code": "trumpet", "sound": "sounds/voice/trumpet" },
+          { "code": "tuba", "sound": "sounds/voice/tuba" }
+        ]
+      },
+      {
+        "code": "voicepitch",
+        "type": "voice",
+        "colbreak": true,
+        "useDropDown": true,
+        "variants": [
+          { "code": "verylow" },
+          { "code": "low" },
+          { "code": "medium" },
+          { "code": "high" },
+          { "code": "veryhigh" }
+        ]
+      },
+      {
+        "code": "hairbase",
+        "type": "shape",
+        "shapeTemplate": { "base": "entity/humanoid/seraphskinparts/hair-base/{code}" },
+        "variants": [
+          { "code": "bald" },
+          { "code": "balding" },
+          { "code": "afro" },
+          { "code": "combed" },
+          { "code": "dreadlocks" },
+          { "code": "indigenousbalding" },
+          { "code": "iroquois" },
+          { "code": "kniaz" },
+          { "code": "layered" },
+          { "code": "longflowing" },
+          { "code": "longwithstrands" },
+          { "code": "mediumlength-bangs" },
+          { "code": "messy" },
+          { "code": "messy2" },
+          { "code": "classic" },
+          { "code": "short" },
+          { "code": "short-parted" },
+          { "code": "shortspiky" },
+          { "code": "short-trimmed" },
+          { "code": "tonsure" }
+        ]
+      },
+      {
+        "code": "hairextra",
+        "type": "shape",
+        "shapeTemplate": { "base": "entity/humanoid/seraphskinparts/hair-extra/{code}" },
+        "variants": [
+          { "code": "none" },
+          { "code": "backbun" },
+          { "code": "braidedup" },
+          { "code": "elaboratestickbun" },
+          { "code": "headsidebraid" },
+          { "code": "largestickbun" },
+          { "code": "neatbraid" },
+          { "code": "classicponytail" },
+          { "code": "ponytail" },
+          { "code": "rolledbraidwithbun" },
+          { "code": "shortmessybraid" },
+          { "code": "sidebraids" },
+          { "code": "sidebuns" },
+          { "code": "siderolls" },
+          { "code": "snood" },
+          { "code": "thicklongfrenchbraid" },
+          { "code": "tiedback" },
+          { "code": "tieddreads" },
+          { "code": "tiedtopknot" },
+          { "code": "topbun" },
+          { "code": "topknot" },
+          { "code": "unkempt" },
+          { "code": "vikingtopbraid" }
+        ]
+      },
+      {
+        "code": "facialexpression",
+        "type": "shape",
+        "variants": [
+          { "code": "angry", "shape": { "base": "entity/humanoid/seraphskinparts/face/angry" } },
+          { "code": "grin", "shape": { "base": "entity/humanoid/seraphskinparts/face/grin" } },
+          { "code": "smirk", "shape": { "base": "entity/humanoid/seraphskinparts/face/smirk" } },
+          { "code": "kind", "shape": { "base": "entity/humanoid/seraphskinparts/face/kind" } },
+          { "code": "upset", "shape": { "base": "entity/humanoid/seraphskinparts/face/upset" } },
+          { "code": "neutral", "shape": { "base": "entity/humanoid/seraphskinparts/face/neutral" } },
+          { "code": "sad", "shape": { "base": "entity/humanoid/seraphskinparts/face/sad" } },
+          { "code": "serious", "shape": { "base": "entity/humanoid/seraphskinparts/face/serious" } },
+          { "code": "tired", "shape": { "base": "entity/humanoid/seraphskinparts/face/tired" } },
+          { "code": "very-sad", "shape": { "base": "entity/humanoid/seraphskinparts/face/very-sad" } }
+        ]
+      },
+      {
+        "code": "mustache",
+        "type": "shape",
+        "shapeTemplate": { "base": "entity/humanoid/seraphskinparts/hair-face/{code}" },
+        "variants": [
+          { "code": "none" },
+          { "code": "mst-line01-pencil" },
+          { "code": "mst-line05-seargent" },
+          { "code": "mst-line10-sheriff" },
+          { "code": "mst-line15-eccentric" },
+          { "code": "mst-line20-seagull" },
+          { "code": "mst-u01-horseshoe" },
+          { "code": "mst-u05-stirrups" },
+          { "code": "mst-walrus05-neat" },
+          { "code": "mst-walrus30-fat" },
+          { "code": "mst-whiskbroom" }
+        ]
+      },
+      {
+        "code": "beard",
+        "type": "shape",
+        "shapeTemplate": { "base": "entity/humanoid/seraphskinparts/hair-face/{code}" },
+        "variants": [
+          { "code": "none" },
+          { "code": "brd-stubble" },
+          { "code": "brd-box05-anchor" },
+          { "code": "brd-box01-chincurtain" },
+          { "code": "brd-box07-ducktail" },
+          { "code": "brd-box10-short" },
+          { "code": "brd-box20-full" },
+          { "code": "brd-chin01-mouche" },
+          { "code": "brd-chin05-chinpatch" },
+          { "code": "brd-chin10-chinpuff" },
+          { "code": "brd-chin15-goatee" },
+          { "code": "brd-chin20-goateehorns" },
+          { "code": "brd-full01-trimmedfull" },
+          { "code": "brd-full05-cleanfull" },
+          { "code": "brd-full10-shaggy" },
+          { "code": "brd-mut05-friendly" },
+          { "code": "brd-mut10-muttonchops" },
+          { "code": "brd-mut15-wildchops" },
+          { "code": "brd-side05-sideburns" },
+          { "code": "brd-side15-sidewhiskers" },
+          { "code": "brd-wisp10-wiseman" }
+        ]
+      },
+      {
+        "code": "haircolor",
+        "type": "texture",
+        "textureTarget": "hair",
+        "textureTemplate": "entity/humanoid/seraphskinparts/hair/{code}",
+        "variants": [
+          { "code": "lightgray" },
+          { "code": "silverchalice" },
+          { "code": "slategray" },
+          { "code": "eerieblack" },
+          { "code": "mossgreen" },
+          { "code": "seagreen" },
+          { "code": "wintergreendream" },
+          { "code": "steelblue" },
+          { "code": "queenblue" },
+          { "code": "indigodye" },
+          { "code": "heliotropegray" },
+          { "code": "palatinatepurple" },
+          { "code": "darkpurple" },
+          { "code": "wheat" },
+          { "code": "ecru" },
+          { "code": "sanddune" },
+          { "code": "harvestgold" },
+          { "code": "cordovan" },
+          { "code": "rosewood" },
+          { "code": "russet" },
+          { "code": "liver" },
+          { "code": "oldburgundy" }
+        ]
+      }
+    ],
+    "alegacyvsquestNoUndress": true,
+    "alegacyvsquestHideInfoText": true
+  },
+  "client": {
+    "renderer": "Shape",
+    "size": 1.1,
+    "shape": { "base": "game:entity/humanoid/seraph-faceless" },
+    "texture": { "base": "albase:boss-crypt-mirror-seraph-naked-hairless" },
+    "behaviors": [
+      { "code": "nametag", "showtagonlywhentargeted": true },
+      { "code": "repulseagents" },
+      { "code": "controlledphysics", "stepHeight": 1.01 },
+      { "code": "interpolateposition" },
+      { "code": "extraskinnable" },
+      { "code": "seraphinventory" },
+      { "code": "alegacyvsquestbosshealthbar", "show": false }
+    ],
+    "animations": [
+      { "code": "walk", "animation": "walk", "blendMode": "Average", "mulWithWalkSpeed": true, "animationSpeed": 1.1 },
+      { "code": "run", "animation": "run", "blendMode": "Average", "mulWithWalkSpeed": true, "animationSpeed": 1.2 },
+      { "code": "hit", "animation": "swordhit", "blendMode": "Average", "animationSpeed": 1.1 },
+      { "code": "attack", "animation": "lazy-attack", "blendMode": "Average", "weight": 10, "animationSpeed": 1.2 },
+      { "code": "sneakidle", "animation": "sneakidle", "blendMode": "Average" },
+      { "code": "die", "animation": "die", "animationSpeed": 1.75, "weight": 10, "blendMode": "AddAverage" },
+      { "code": "hurt", "animation": "hurt", "animationSpeed": 2, "blendMode": "AddAverage" },
+      { "code": "idle", "animation": "idle", "blendMode": "AddAverage", "triggeredBy": { "defaultAnim": true } }
+    ]
+  },
+  "server": {
+    "behaviors": [
+      { "code": "repulseagents" },
+      { "code": "controlledphysics", "stepHeight": 1.01 },
+      { "code": "health", "currenthealth": 420, "maxhealth": 420 },
+      { "code": "bossplayerclone" },
+      { "code": "extraskinnable" },
+      { "code": "seraphinventory" },
+      {
+        "code": "taskai",
+        "aitasks": [
+          {
+            "code": "meleeattack",
+            "entityCodes": ["player"],
+            "priority": 2,
+            "damage": 12.0,
+            "damageTier": 3,
+            "minDist": 2.8,
+            "minVerDist": 2.8,
+            "attackAngleRangeDeg": 120,
+            "mincooldown": 1200,
+            "maxcooldown": 2200,
+            "damagePlayerAtMs": 450,
+            "attackDurationMs": 1000,
+            "animation": "swordhit",
+            "animationSpeed": 0.9,
+            "sound": "game:sounds/creature/drifter-hit",
+            "soundStartMs": 350,
+            "soundVolume": 3
+          },
+          {
+            "code": "seektargetplayer",
+            "priority": 1.7,
+            "movespeed": 0.05,
+            "seekingRange": 50,
+            "maxFollowTime": 300,
+            "animation": "run",
+            "animationSpeed": 1.35
+          },
+          {
+            "code": "seekentity",
+            "entityCodes": ["player"],
+            "priority": 1.5,
+            "mincooldown": 200,
+            "maxcooldown": 400,
+            "movespeed": 0.04,
+            "seekingRange": 45,
+            "maxFollowTime": 300,
+            "searchWaitMs": 500,
+            "executionChance": 1,
+            "animationSpeed": 1.15,
+            "animation": "walk"
+          },
+          { "code": "lookaround", "priority": 0.5 }
+        ]
+      }
+    ]
+  },
+  "idleSoundRange": 14,
+  "sounds": {
+    "hurt": "game:sounds/creature/drifter-hurt",
+    "death": "game:sounds/creature/drifter-death",
+    "idle": "game:sounds/creature/drifter-idle",
+    "attack": "game:sounds/creature/drifter-hit"
+  }
+}

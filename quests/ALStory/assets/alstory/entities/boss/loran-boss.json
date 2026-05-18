@@ -1,0 +1,297 @@
+{
+  "canClimb": true,
+  "class": "EntityPlayerBot",
+  "attributes": {
+    "skinnableParts": [],
+    "alegacyvsquestNoUndress": true,
+    "vsquestSoundPitchMul": 0.4,
+    "trackCombatTime": true,
+    "inventory": [
+      { "type": "item", "code": "game:armor-head-antique-forlorn-damaged" },
+      { "type": "item", "code": "game:armor-body-antique-forlorn-damaged" },
+      { "type": "item", "code": "game:armor-legs-antique-forlorn-damaged" },
+      { "type": "item", "code": "game:shield-woodmetal", "attributes": { "wood": "oak", "metal": "iron", "deco": "none" } },
+      { "type": "item", "code": "ancientarmory:aa-blade-claymore-steel" },
+      { "type": "item", "code": "ancientarmory:aa-blade-claymore-steel" }
+    ]
+  },
+  "client": {
+    "renderer": "Shape",
+    "size": 1.15,
+    "shape": { "base": "game:entity/humanoid/seraph-faceless" },
+    "texture": { "base": "game:entity/humanoid/seraph-naked-hairless" },
+    "behaviors": [
+      { "code": "nametag", "showtagonlywhentargeted": true },
+      { "code": "repulseagents" },
+      { "code": "controlledphysics", "stepHeight": 1.01 },
+      { "code": "interpolateposition" },
+      { "code": "extraskinnable" },
+      { "code": "seraphinventory" },
+      { "code": "boss", "bossHpBarRange": 70 },
+      { "code": "bossmusicurl", "musicKey": "theme_alstory_loran", "range": 70 },
+      { "code": "bossnametag", "nameLangKey": "alstory:item-creature-loran-boss", "color": "#8B0000", "backgroundColor": "#000000", "backgroundOpacity": 0.5, "renderRange": 90 },
+      { "code": "bossgrowthritual" }
+    ],
+    "animations": [
+      { "code": "walk", "animation": "walk", "blendMode": "Average", "mulWithWalkSpeed": true, "animationSpeed": 1.15 },
+      { "code": "run", "animation": "run", "blendMode": "Average", "mulWithWalkSpeed": true, "animationSpeed": 1.3 },
+      { "code": "hit", "animation": "swordhit", "blendMode": "Average", "animationSpeed": 1.2 },
+      { "code": "attack", "animation": "lazy-attack", "blendMode": "Average", "weight": 10, "animationSpeed": 1.3 },
+      { "code": "sneakidle", "animation": "sneakidle", "blendMode": "Average" },
+      { "code": "die", "animation": "die", "animationSpeed": 1.75, "weight": 10, "blendMode": "AddAverage" },
+      { "code": "hurt", "animation": "hurt", "animationSpeed": 2, "blendMode": "AddAverage" },
+      { "code": "idle", "animation": "idle", "blendMode": "AddAverage", "triggeredBy": { "defaultAnim": true } }
+    ]
+  },
+  "code": "loran-boss",
+  "hitboxSize": { "x": 0.65, "y": 1.85 },
+  "server": {
+    "behaviors": [
+      { "code": "repulseagents" },
+      { "code": "controlledphysics", "stepHeight": 1.01 },
+      { "code": "health", "currenthealth": 350, "maxhealth": 350 },
+      { "code": "bossrebirth2", "isFinalStage": true },
+      { "code": "bosscombatmarker", "trackCombatTime": true },
+      { "code": "bosshastargetsync" },
+      {
+        "code": "bossstillnessmark",
+        "stages": [
+          { "whenHealthRelBelow": 0.75, "cooldownSeconds": 15, "range": 16, "durationMs": 2500, "playerStunMs": 1800 }
+        ]
+      },
+      {
+        "code": "bosswoundedmark",
+        "stages": [
+          { "whenHealthRelBelow": 0.55, "cooldownSeconds": 18, "range": 18, "damageBoost": 0.12, "markDurationSeconds": 15 },
+          { "whenHealthRelBelow": 0.25, "cooldownSeconds": 12, "range": 22, "damageBoost": 0.22, "markDurationSeconds": 15 }
+        ]
+      },
+      { "code": "alegacyvsquestbosshealthbar", "show": true },
+      {
+        "code": "bossgrowthritual",
+        "stages": [
+          {
+            "whenHealthRelBelow": 0.5,
+            "sizeMultiplier": 1.6,
+            "speedMultiplier": 1.15,
+            "damageMultiplier": 1.2,
+            "animation": "sneakidle",
+            "animationMs": 3000,
+            "sound": "game:creature/eidolon/awake",
+            "soundRange": 32,
+            "lightningFlash": true,
+            "cooldownSeconds": 0
+          }
+        ]
+      },
+      {
+        "code": "bossdamageshield",
+        "stages": [
+          {
+            "whenHealthRelBelow": 0.85,
+            "shieldMs": 3500,
+            "windupMs": 200,
+            "cooldownSeconds": 12,
+            "incomingDamageMultiplier": 0.30,
+            "animation": "sneakidle",
+            "animationStopMs": 2800,
+            "repeatable": true,
+            "immobile": true,
+            "lockYaw": true,
+            "sound": "game:block/heavymetal-hit",
+            "soundRange": 28,
+            "soundStartMs": 0,
+            "loopSound": "game:sounds/effect/gears",
+            "loopSoundRange": 22,
+            "loopSoundIntervalMs": 200
+          },
+          {
+            "whenHealthRelBelow": 0.5,
+            "shieldMs": 4500,
+            "windupMs": 300,
+            "cooldownSeconds": 15,
+            "incomingDamageMultiplier": 0.20,
+            "animation": "sneakidle",
+            "animationStopMs": 3500,
+            "repeatable": true,
+            "immobile": true,
+            "lockYaw": true,
+            "sound": "game:block/heavymetal-hit2",
+            "soundRange": 32,
+            "soundStartMs": 0,
+            "loopSound": "game:sounds/effect/gears",
+            "loopSoundRange": 26,
+            "loopSoundIntervalMs": 150
+          },
+          {
+            "whenHealthRelBelow": 0.25,
+            "shieldMs": 5500,
+            "windupMs": 400,
+            "cooldownSeconds": 18,
+            "incomingDamageMultiplier": 0.10,
+            "animation": "sneakidle",
+            "animationStopMs": 4200,
+            "repeatable": true,
+            "immobile": true,
+            "lockYaw": true,
+            "sound": "game:creature/eidolon/rockfallslam",
+            "soundRange": 36,
+            "soundStartMs": 0,
+            "loopSound": "game:sounds/effect/gears",
+            "loopSoundRange": 30,
+            "loopSoundIntervalMs": 100
+          }
+        ]
+      },
+      {
+        "code": "bossdash",
+        "stages": [
+          {
+            "whenHealthRelBelow": 0.95,
+            "cooldownSeconds": 8,
+            "minTargetRange": 3,
+            "maxTargetRange": 15,
+            "windupMs": 200,
+            "dashMs": 300,
+            "dashSpeed": 1.4,
+            "dashDirection": "forward",
+            "windupAnimation": "hit",
+            "dashAnimation": "run",
+            "sound": "game:creature/shiver/thump1",
+            "soundRange": 24,
+            "soundStartMs": 100,
+            "soundVolume": 0.3
+          },
+          {
+            "whenHealthRelBelow": 0.6,
+            "cooldownSeconds": 6,
+            "minTargetRange": 4,
+            "maxTargetRange": 20,
+            "windupMs": 150,
+            "dashMs": 350,
+            "dashSpeed": 1.6,
+            "dashDirection": "side",
+            "windupAnimation": "hit",
+            "dashAnimation": "run",
+            "sound": "game:creature/shiver/thump2",
+            "soundRange": 26,
+            "soundStartMs": 100,
+            "soundVolume": 0.35
+          },
+          {
+            "whenHealthRelBelow": 0.3,
+            "cooldownSeconds": 5,
+            "minTargetRange": 5,
+            "maxTargetRange": 25,
+            "windupMs": 100,
+            "dashMs": 400,
+            "dashSpeed": 1.8,
+            "dashDirection": "back",
+            "windupAnimation": "hit",
+            "dashAnimation": "run",
+            "sound": "game:creature/shiver/thump3",
+            "soundRange": 28,
+            "soundStartMs": 100,
+            "soundVolume": 0.4
+          }
+        ]
+      },
+      { "code": "extraskinnable" },
+      { "code": "seraphinventory" },
+      {
+        "code": "taskai",
+        "aitasks": [
+          {
+            "code": "meleeattack",
+            "entityCodes": ["player"],
+            "priority": 2.5,
+            "damage": 25,
+            "damageTier": 4,
+            "minDist": 2.5,
+            "minVerDist": 2.5,
+            "attackAngleRangeDeg": 140,
+            "mincooldown": 800,
+            "maxcooldown": 1600,
+            "damagePlayerAtMs": 350,
+            "attackDurationMs": 850,
+            "animation": "swordhit",
+            "animationSpeed": 1.1,
+            "sound": "game:creature/drifter-hit",
+            "soundStartMs": 300
+          },
+          {
+            "code": "meleeattack",
+            "entityCodes": ["player"],
+            "priority": 2.2,
+            "damage": 32,
+            "damageTier": 4,
+            "damageType": "SlashingAttack",
+            "knockbackStrength": 3,
+            "minDist": 2.0,
+            "minVerDist": 2.0,
+            "attackAngleRangeDeg": 180,
+            "mincooldown": 2000,
+            "maxcooldown": 3500,
+            "damagePlayerAtMs": 500,
+            "attackDurationMs": 1200,
+            "animation": "attack",
+            "animationSpeed": 1.0,
+            "sound": "game:creature/eidolon/rockfallslam",
+            "soundStartMs": 400
+          },
+          {
+            "code": "seekentity",
+            "entityCodes": ["player"],
+            "priority": 1.8,
+            "mincooldown": 100,
+            "maxcooldown": 250,
+            "movespeed": 0.035,
+            "seekingRange": 50,
+            "maxFollowTime": 400,
+            "searchWaitMs": 300,
+            "executionChance": 1,
+            "animationSpeed": 1.25,
+            "animation": "walk"
+          },
+          {
+            "code": "seekentity",
+            "entityCodes": ["player"],
+            "priority": 1.6,
+            "mincooldown": 100,
+            "maxcooldown": 200,
+            "movespeed": 0.08,
+            "seekingRange": 30,
+            "maxFollowTime": 250,
+            "searchWaitMs": 150,
+            "executionChance": 0.85,
+            "animationSpeed": 1.5,
+            "animation": "run"
+          },
+          { "code": "lookaround", "priority": 0.5 }
+        ]
+      },
+      { "code": "questtarget", "targetId": "alstory:necropolis_judgment:loran", "leashRange": 70, "returnMoveSpeed": 0.04, "leashCheckMs": 800 },
+      { "code": "bossrespawn", "respawnInGameHours": 24, "spawnNewBoss": true, "respawnEntityCode": "alstory:loran" },
+      {
+        "code": "alegacyvsquest:questdropondeath",
+        "drops": [
+          {
+            "type": "actionitem",
+            "code": "alstory-note-loranfinal",
+            "quantity": { "avg": 1 },
+            "onlyIfQuestActive": "alstory:last_breath_collect",
+            "onlyOncePerQuest": true,
+            "variableKey": "loranfinal_dropped"
+          }
+        ]
+      }
+    ]
+  },
+  "idleSoundRange": 20,
+  "sounds": {
+    "hurt": "game:creature/shiver/hurt",
+    "death": "game:creature/shiver/death",
+    "idle": "game:creature/shiver/idle*",
+    "attack": "game:creature/shiver/aggro"
+  }
+}

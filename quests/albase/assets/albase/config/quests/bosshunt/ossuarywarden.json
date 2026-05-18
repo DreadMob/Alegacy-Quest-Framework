@@ -1,0 +1,102 @@
+{
+  "id": "albase:bosshunt-ossuarywarden",
+  "cooldown": 75,
+  "perPlayer": true,
+  "predecessor": "albase:bosshunt-intro",
+  "onAcceptedActions": [
+    {
+      "id": "playsound",
+      "args": [
+        "alegacyvsquest:sounds/queacc",
+        "0.175"
+      ]
+    },
+    {
+      "id": "preloadbossmusic",
+      "args": [
+        "https://drive.google.com/uc?export=download&id=1Swpv0Jqsed7VFyCRefr7eglVLM1mfyKG",
+        "https://drive.google.com/uc?export=download&id=1JPczCvwS_ULq1ToWRuvcbc4woX-bIGNG"
+      ]
+    },
+    {
+      "id": "addjournalentry",
+      "args": [
+        "albase:bosshunt",
+        "albase:bosshunt-ossuarywarden",
+        "albase:bosshunt-ossuarywarden-title",
+        "albase:bosshunt-ossuarywarden-journal-text"
+      ]
+    },
+    {
+      "id": "notify",
+      "args": [
+        "albase:bosshunt-use-tracker"
+      ]
+    },
+    {
+      "id": "notify",
+      "args": [
+        "albase:bosshunt-rotation-info"
+      ]
+    }
+  ],
+  "actionObjectives": [
+    {
+      "id": "killactiontarget",
+      "objectiveId": "warden",
+      "onCompleteActions": "addjournalentry albase:bosshunt albase:bosshunt-ossuarywarden albase:bosshunt-ossuarywarden-title overwrite albase:bosshunt-ossuarywarden-reward-journal-text",
+      "args": [
+        "albase:bosshunt-ossuarywarden",
+        "warden",
+        "albase:bosshunt:ossuarywarden",
+        "1"
+      ]
+    }
+  ],
+  "killObjectives": [],
+  "itemRewards": [],
+  "actionRewards": [
+    {
+      "id": "addreputation",
+      "args": [
+        "npc",
+        "albase:bosshunter",
+        "50"
+      ]
+    },
+    {
+      "id": "addreputation",
+      "args": [
+        "npc",
+        "albase:bosshunter",
+        "50",
+        "alegacyvsquest:rep-bosshunt-ossuarywarden-once"
+      ]
+    },
+    {
+      "id": "randomquestitem",
+      "args": [
+        "1",
+        "albase:bosshunt-reward-miner-belt",
+        "albase:bosshunt-reward-miner-belt",
+        "albase:bosshunt-reward-bloodthirsty",
+        "albase:bosshunt-reward-bloodthirsty",
+        "albase:bosshunt-reward-bloodthirsty"
+      ]
+    },
+    {
+      "id": "showquestfinaldialog",
+      "args": [
+        "albase:dialogue-bosshunter-final-title",
+        "albase:dialogue-bosshunter-final-text",
+        "albase:dialogue-bosshunter-final-option"
+      ]
+    },
+    {
+      "id": "notify",
+      "args": [
+        "albase:bosshunt-ossuarywarden-reward"
+      ]
+    }
+  ]
+}

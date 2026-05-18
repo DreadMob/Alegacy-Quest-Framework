@@ -1,0 +1,32 @@
+{
+  "canClimb": true,
+  "class": "EntityAgent",
+  "client": {
+    "renderer": "Shape",
+    "shape": { "base": "albase:entity/humanoid/trader" },
+    "texture": { "base": "albase:entity/humanoid/traderclothes/set5" },
+    "behaviors": [
+      { "code": "nametag", "showtagonlywhentargeted": true },
+      { "code": "repulseagents" },
+      { "code": "controlledphysics", "stepHeight": 1.01 },
+      { "code": "interpolateposition" },
+      { "code": "conversable", "dialogue": "config/dialogue/heinrich" }
+    ]
+  },
+  "code": "heinrich",
+  "hitboxSize": { "x": 0.6, "y": 1.75 },
+  "server": {
+    "behaviors": [
+      {
+        "code": "nametag",
+        "showtagonlywhentargeted": true,
+        "selectFromRandomName": ["Генрих"]
+      },
+      { "code": "controlledphysics", "stepHeight": 1.01 },
+      { "code": "health", "currenthealth": 1000000, "maxhealth": 1000000 },
+      { "code": "conversable", "dialogue": "config/dialogue/heinrich" },
+      { "code": "questgiver" }
+    ]
+  },
+  "sounds": {}
+}

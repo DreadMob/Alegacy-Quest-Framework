@@ -1,0 +1,54 @@
+{
+  "canClimb": true,
+  "class": "EntityPlayerBot",
+  "client": {
+    "renderer": "Shape",
+    "size": 1.05,
+    "shape": { "base": "game:entity/humanoid/seraph-faceless" },
+    "texture": { "base": "game:entity/humanoid/seraph-naked-hairless" },
+    "behaviors": [
+      { "code": "nametag", "showtagonlywhentargeted": true },
+      { "code": "repulseagents" },
+      { "code": "controlledphysics", "stepHeight": 1.01 },
+      { "code": "interpolateposition" },
+      { "code": "extraskinnable" },
+      { "code": "seraphinventory" },
+      { "code": "conversable", "dialogue": "config/dialogue/loran" }
+    ]
+  },
+  "attributes": {
+    "skinnableParts": [],
+    "alegacyvsquestNoUndress": true,
+    "inventory": [
+      { "type": "item", "code": "game:armor-head-antique-forlorn-damaged" },
+      { "type": "item", "code": "game:armor-body-antique-forlorn-damaged" },
+      { "type": "item", "code": "game:armor-legs-antique-forlorn-damaged" },
+      { "type": "item", "code": "game:shield-woodmetal", "attributes": { "wood": "oak", "metal": "iron", "deco": "none" } },
+      { "type": "item", "code": "ancientarmory:aa-blade-claymore-steel" },
+      { "type": "item", "code": "ancientarmory:aa-blade-claymore-steel" }
+    ]
+  },
+  "code": "loran",
+  "hitboxSize": { "x": 0.6, "y": 1.75 },
+  "server": {
+    "behaviors": [
+      {
+        "code": "nametag",
+        "showtagonlywhentargeted": true,
+        "selectFromRandomName": ["Лорэн"]
+      },
+      { "code": "controlledphysics", "stepHeight": 1.01 },
+      { "code": "health", "currenthealth": 5, "maxhealth": 5 },
+      { "code": "bossrebirth2", "nextEntityCode": "alstory:loran-boss", "isFinalStage": false, "spawnDelayMs": 0, "spawnLightning": false },
+      { "code": "extraskinnable" },
+      { "code": "seraphinventory" },
+      { "code": "conversable", "dialogue": "config/dialogue/loran" },
+      { "code": "repulseagents" }
+    ]
+  },
+  "sounds": {
+    "hurt": "game:creature/drifter-hurt",
+    "death": "game:creature/drifter-death",
+    "idle": "game:creature/drifter-idle"
+  }
+}

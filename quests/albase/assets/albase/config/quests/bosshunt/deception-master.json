@@ -1,0 +1,85 @@
+{
+  "id": "albase:bosshunt-crypt-mirror-disabled",
+  "cooldown": 75,
+  "perPlayer": true,
+  "predecessor": "albase:bosshunt-intro",
+  "onAcceptedActions": [
+    {
+      "id": "playsound",
+      "args": [
+        "alegacyvsquest:sounds/queacc",
+        "0.175"
+      ]
+    },
+    {
+      "id": "addjournalentry",
+      "args": [
+        "albase:bosshunt",
+        "albase:bosshunt-crypt-mirror",
+        "albase:bosshunt-crypt-mirror-title",
+        "albase:bosshunt-crypt-mirror-journal-text"
+      ]
+    },
+    {
+      "id": "notify",
+      "args": [
+        "albase:bosshunt-use-tracker"
+      ]
+    },
+    {
+      "id": "notify",
+      "args": [
+        "albase:bosshunt-rotation-info"
+      ]
+    }
+  ],
+  "actionObjectives": [
+    {
+      "id": "killactiontarget",
+      "objectiveId": "crypt-mirror",
+      "onCompleteActions": "addjournalentry albase:bosshunt albase:bosshunt-crypt-mirror albase:bosshunt-crypt-mirror-title overwrite albase:bosshunt-crypt-mirror-reward-journal-text",
+      "args": [
+        "albase:bosshunt-crypt-mirror",
+        "crypt-mirror",
+        "albase:bosshunt:crypt-mirror",
+        "1"
+      ]
+    }
+  ],
+  "killObjectives": [],
+  "itemRewards": [],
+  "actionRewards": [
+    {
+      "id": "addreputation",
+      "args": [
+        "npc",
+        "albase:bosshunter",
+        "50"
+      ]
+    },
+    {
+      "id": "addreputation",
+      "args": [
+        "npc",
+        "albase:bosshunter",
+        "50",
+        "",
+        "alegacyvsquest:rep-bosshunt-crypt-mirror-once"
+      ]
+    },
+    {
+      "id": "showquestfinaldialog",
+      "args": [
+        "albase:dialogue-bosshunter-final-title",
+        "albase:dialogue-bosshunter-final-text",
+        "albase:dialogue-bosshunter-final-option"
+      ]
+    },
+    {
+      "id": "notify",
+      "args": [
+        "albase:bosshunt-crypt-mirror-reward"
+      ]
+    }
+  ]
+}

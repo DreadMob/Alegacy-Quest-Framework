@@ -1,0 +1,19 @@
+﻿{
+  "actionItems": [
+    {
+      "id": "albase:trial-abyss-belt",
+      "itemCode": "albase:trial-abyss-belt",
+      "name": "<font color=\"#60A5FA\">Кушак Бездны</font>",
+      "description": "<font color=\"#93C5FD\">Тканый пояс, пропитанный силой порождений. Усиливает каждый удар.</font>",
+      "actions": [],
+      "attributes": {
+        "critchance": 0.04,
+        "bossdamage": 0.04,
+        "attackspeed": 0.05,
+        "meleeattackpower": 1.5
+      },
+      "showAttributes": ["critchance", "bossdamage", "attackspeed", "meleeattackpower"],
+      "hideVanillaTooltips": ["warmth", "modsource"]
+    }
+  ]
+}

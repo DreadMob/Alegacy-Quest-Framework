@@ -1,0 +1,87 @@
+{
+  "canClimb": true,
+  "class": "EntityAgent",
+  "client": {
+    "renderer": "Shape",
+    "shape": {
+      "base": "albase:entity/humanoid/trader"
+    },
+    "texture": {
+      "base": "albase:treasurer"
+    },
+    "behaviors": [
+      {
+        "code": "nametag",
+        "showtagonlywhentargeted": false
+      },
+      {
+        "code": "repulseagents"
+      },
+      {
+        "code": "controlledphysics",
+        "stepHeight": 1.01
+      },
+      {
+        "code": "interpolateposition"
+      },
+      {
+        "code": "conversable",
+        "dialogue": "config/dialogue/treasurer"
+      },
+      {
+        "code": "questgiver"
+      }
+    ]
+  },
+  "code": "treasurer",
+  "hitboxSize": {
+    "x": 0.6,
+    "y": 1.75
+  },
+  "attributes": {
+    "alternativeCollisionBox": [0.6, 1.75],
+    "renderRange": 32
+  },
+  "server": {
+    "behaviors": [
+      {
+        "code": "nametag",
+        "showtagonlywhentargeted": false,
+        "selectFromRandomName": [
+          "Казначей"
+        ]
+      },
+      {
+        "code": "controlledphysics",
+        "stepHeight": 1.01
+      },
+      {
+        "code": "health",
+        "currenthealth": 1000000,
+        "maxhealth": 1000000
+      },
+      {
+        "code": "conversable",
+        "dialogue": "config/dialogue/treasurer"
+      },
+      {
+        "code": "questgiver",
+        "alwaysquests": [
+          "albase:treasurer-survey"
+        ],
+        "quests": [
+          "albase:treasurer-buy-allowance",
+          "albase:treasurer-buy-maxareas",
+          "albase:treasurer-buy-allowance-large",
+          "albase:treasurer-buy-maxareas-large"
+        ],
+        "singlequestatatime": true,
+        "noAvailableQuestDescLangKey": "albase:no-quest-available-treasurer",
+        "noAvailableQuestCooldownDescLangKey": "albase:no-quest-available-treasurer-cooldown",
+        "selectrandom": false,
+        "selectrandomcount": 1
+      }
+    ]
+  },
+  "sounds": {}
+}

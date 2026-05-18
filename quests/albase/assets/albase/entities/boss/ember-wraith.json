@@ -1,0 +1,135 @@
+{
+  "code": "ember-wraith",
+  "class": "EntityAgent",
+  "tags": ["alegacy-boss"],
+  "fallDamage": false,
+  "canClimb": true,
+  "hitboxSize": { "x": 0.8, "y": 2.2 },
+  "deadHitboxSize": { "x": 0.8, "y": 0.4 },
+  "eyeHeight": 1.8,
+  "attributes": {
+    "knockbackResistance": 0.5,
+    "killedByInfoText": "deadcreature-vile",
+    "reckless": true,
+    "vsquestSoundPitchMul": 1.2,
+    "alegacyvsquestHideInfoText": true
+  },
+  "drops": [],
+  "client": {
+    "renderer": "Shape",
+    "pitchStep": false,
+    "size": 1.4,
+    "shape": { "base": "game:entity/lore/bowtorn/gearfoot" },
+    "texture": { "base": "albase:trials/ember-wraith" },
+    "glowLevel": 60,
+    "behaviors": [
+      { "code": "repulseagents" },
+      { "code": "controlledphysics", "stepHeight": 1.01 },
+      { "code": "floatupwhenstuck", "onlyWhenDead": true },
+      { "code": "interpolateposition" },
+      { "code": "harvestable", "duration": 999999 },
+      { "code": "boss", "bossHpBarRange": 60 },
+      { "code": "bossmusicurl", "musicKey": "theme_trial_4", "range": 60, "startRange": 25, "combatTimeoutMs": 20000, "fadeOutSeconds": 4 },
+      { "code": "bossnametag", "nameLangKey": "albase:trial-ember-wraith-title", "color": "#A78BFA", "backgroundColor": "#000000", "backgroundOpacity": 0.35, "renderRange": 60 }
+    ],
+    "animations": [
+      { "code": "hurt", "animation": "hurt", "animationSpeed": 2.0, "weight": 10, "blendMode": "AddAverage" },
+      { "code": "die", "animation": "die", "animationSpeed": 1.0, "weight": 10, "blendMode": "Average", "triggeredBy": { "onControls": ["dead"] } },
+      { "code": "idle", "animation": "idle", "blendMode": "Average", "triggeredBy": { "defaultAnim": true } },
+      { "code": "walk", "animation": "walk", "blendMode": "Average" },
+      { "code": "run", "animation": "run", "blendMode": "Average" },
+      { "code": "stab", "animation": "stab", "animationSpeed": 1.5, "blendMode": "Average", "weight": 100 }
+    ]
+  },
+  "server": {
+    "behaviors": [
+      { "code": "repulseagents" },
+      { "code": "controlledphysics", "stepHeight": 1.01 },
+      { "code": "health", "currenthealth": 350, "maxhealth": 350 },
+      { "code": "bosscombatmarker", "trackCombatTime": true },
+      { "code": "bosshastargetsync" },
+      { "code": "bossghostflight", "hoverHeight": 3.5, "hoverSpeed": 0.04, "bobAmplitude": 0.3, "bobFrequency": 1.5 },
+      { "code": "questtarget", "targetId": "albase:trial:ember-wraith", "leashRange": 60, "returnMoveSpeed": 0.06, "leashCheckMs": 1000 },
+      {
+        "code": "emotionstates",
+        "states": [
+          { "code": "aggressiveondamage", "duration": 30, "chance": 1, "slot": 0, "priority": 0.5, "accumType": "noaccum" },
+          { "code": "ember-ignite", "duration": 999999, "chance": 1, "slot": 1, "priority": 1, "accumType": "noaccum", "whenHealthRelBelow": 0.6 }
+        ]
+      },
+      { "code": "bossenrage", "enrageTimerSeconds": 240 },
+      { "code": "bossvulnerabilitywindow", "damageMultiplier": 2.0, "durationSeconds": 2.5, "triggerAbilities": ["bosscursemark"] },
+      { "code": "bossvoidzone", "stages": [{ "whenHealthRelBelow": 1.0, "cooldownSeconds": 11, "maxTargetRange": 25, "maxRadius": 4, "growDurationSec": 2, "dpsInZone": 4, "lifetimeSec": 7, "maxActiveZones": 2, "sound": "effect/translocate-idle", "soundRange": 24 }] },
+      { "code": "bosscursemark", "stages": [{ "whenHealthRelBelow": 0.7, "cooldownSeconds": 16, "maxTargetRange": 25, "markDelaySec": 3, "baseDamage": 14, "safeDistance": 15, "sound": "environment/thunder1", "soundRange": 32 }] },
+      { "code": "bossphaseshift", "stages": [{ "whenHealthRelBelow": 1.0, "cooldownSeconds": 10, "maxTargetRange": 30, "shiftRadius": 10, "durationMs": 1000, "sound": "block/meteoriciron", "soundRange": 32 }] },
+      { "code": "bossrandomlightning", "stages": [{ "whenHealthRelBelow": 0.7, "cooldownSeconds": 12, "maxTargetRange": 25, "damage": 6, "damageTier": 3, "strikeCount": 2, "strikeRadius": 3, "minCount": 2, "maxCount": 3, "minRadius": 2, "maxRadius": 10, "warningDelayMs": 2500, "sound": "weather/lightning-verynear", "soundRange": 48, "soundVolume": 0.15, "warningSound": "effect/translocate-active", "warningSoundRange": 32, "warningSoundVolume": 0.3 }] },
+      {
+        "code": "taskai",
+        "inheritedTasks": false,
+        "aitasks": [
+          {
+            "code": "seekentity",
+            "entityCodes": ["player"],
+            "priority": 2.0,
+            "movespeed": 0.04,
+            "seekingRange": 35,
+            "maxFollowTime": 120,
+            "animation": "run",
+            "animationSpeed": 1.2
+          },
+          {
+            "code": "meleeattack",
+            "entityCodes": ["player"],
+            "priority": 2.5,
+            "damage": 10,
+            "damageTier": 3,
+            "minDist": 8.0,
+            "minVerDist": 4.0,
+            "mincooldown": 2000,
+            "maxcooldown": 3500,
+            "damagePlayerAtMs": 500,
+            "attackDurationMs": 900,
+            "animation": "stab",
+            "animationSpeed": 1.3,
+            "sound": "game:sounds/creature/drifter-hit",
+            "soundStartMs": 500
+          },
+          {
+            "code": "meleeattack",
+            "entityCodes": ["player"],
+            "priority": 2.35,
+            "damage": 14,
+            "damageTier": 3,
+            "minDist": 10.0,
+            "minVerDist": 5.0,
+            "mincooldown": 1500,
+            "maxcooldown": 2500,
+            "damagePlayerAtMs": 400,
+            "attackDurationMs": 800,
+            "animation": "stab",
+            "animationSpeed": 1.5,
+            "sound": "game:sounds/creature/drifter-hit",
+            "soundStartMs": 400,
+            "whenInEmotionState": "ember-ignite"
+          },
+          {
+            "code": "wander",
+            "priority": 1.0,
+            "movespeed": 0.02,
+            "animation": "walk",
+            "animationSpeed": 1.0
+          },
+          { "code": "lookaround", "priority": 0.5 }
+        ]
+      },
+      { "code": "deaddecay", "hoursToDecay": 999999 },
+      { "code": "bossrespawn", "respawnInGameHours": 168, "spawnNewBoss": false },
+      { "code": "floatupwhenstuck", "onlyWhenDead": true }
+    ]
+  },
+  "sounds": {
+    "hurt": "game:sounds/creature/drifter-hurt",
+    "death": "game:sounds/creature/drifter-death",
+    "idle": "game:sounds/creature/drifter-idle"
+  }
+}

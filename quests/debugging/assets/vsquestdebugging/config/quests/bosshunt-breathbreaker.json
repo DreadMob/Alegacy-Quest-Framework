@@ -1,0 +1,72 @@
+{
+  "id": "vsquestdebugging:bosshunt-breathbreaker",
+  "cooldown": 0,
+  "perPlayer": true,
+  "onAcceptedActions": [
+    {
+      "id": "playsound",
+      "args": [
+        "alegacyvsquest:sounds/queacc",
+        "0.175"
+      ]
+    },
+    {
+      "id": "preloadbossmusic",
+      "args": [
+        "https://drive.google.com/uc?export=download&id=1Swpv0Jqsed7VFyCRefr7eglVLM1mfyKG"
+      ]
+    },
+    {
+      "id": "addjournalentry",
+      "args": [
+        "vsquestdebugging:bosshunt",
+        "vsquestdebugging:bosshunt-breathbreaker",
+        "vsquestdebugging:bosshunt-breathbreaker-title",
+        "vsquestdebugging:bosshunt-breathbreaker-journal-text"
+      ]
+    },
+    {
+      "id": "notify",
+      "args": [
+        "vsquestdebugging:bosshunt-use-tracker"
+      ]
+    },
+    {
+      "id": "notify",
+      "args": [
+        "vsquestdebugging:bosshunt-rotation-info"
+      ]
+    }
+  ],
+  "actionObjectives": [
+    {
+      "id": "killactiontarget",
+      "objectiveId": "breathbreaker",
+      "onCompleteActions": "addjournalentry vsquestdebugging:bosshunt vsquestdebugging:bosshunt-breathbreaker vsquestdebugging:bosshunt-breathbreaker-title overwrite vsquestdebugging:bosshunt-breathbreaker-reward-journal-text",
+      "args": [
+        "vsquestdebugging:bosshunt-breathbreaker",
+        "breathbreaker",
+        "vsquestdebugging:bosshunt:breathbreaker",
+        "1"
+      ]
+    }
+  ],
+  "killObjectives": [],
+  "itemRewards": [],
+  "actionRewards": [
+    {
+      "id": "showquestfinaldialog",
+      "args": [
+        "vsquestdebugging:dialogue-bosshunter-final-title",
+        "vsquestdebugging:dialogue-bosshunter-final-text",
+        "vsquestdebugging:dialogue-bosshunter-final-option"
+      ]
+    },
+    {
+      "id": "notify",
+      "args": [
+        "vsquestdebugging:bosshunt-breathbreaker-reward"
+      ]
+    }
+  ]
+}

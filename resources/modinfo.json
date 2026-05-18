@@ -1,0 +1,15 @@
+{
+    "type": "code",
+    "modid": "alegacyvsquest",
+    "name": "Alegacy Quest Framework",
+    "side": "universal",
+    "authors": [
+        "DreadMob",
+        "Flajakay"
+    ],
+    "description": "Mod that focuses on implementing a Quest System.",
+    "version": "3.0.0",
+    "dependencies": {
+        "game": "1.22.1"
+    }
+}

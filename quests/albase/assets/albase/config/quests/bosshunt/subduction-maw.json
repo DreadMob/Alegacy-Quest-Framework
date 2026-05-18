@@ -1,0 +1,99 @@
+{
+  "id": "albase:bosshunt-subduction-maw",
+  "cooldown": 75,
+  "perPlayer": true,
+  "predecessor": "albase:bosshunt-intro",
+  "onAcceptedActions": [
+    {
+      "id": "playsound",
+      "args": [
+        "alegacyvsquest:sounds/queacc",
+        "0.175"
+      ]
+    },
+    {
+      "id": "preloadbossmusic",
+      "args": [
+        "https://drive.google.com/uc?export=download&id=1kR-As-lRZq7zPVuhVAtTKqXTDa0Io3fq"
+      ]
+    },
+    {
+      "id": "addjournalentry",
+      "args": [
+        "albase:bosshunt",
+        "albase:bosshunt-subduction-maw",
+        "albase:bosshunt-subduction-maw-title",
+        "albase:bosshunt-subduction-maw-journal-text"
+      ]
+    },
+    {
+      "id": "notify",
+      "args": [
+        "albase:bosshunt-use-tracker"
+      ]
+    },
+    {
+      "id": "notify",
+      "args": [
+        "albase:bosshunt-rotation-info"
+      ]
+    }
+  ],
+  "actionObjectives": [
+    {
+      "id": "killactiontarget",
+      "objectiveId": "subduction-maw",
+      "onCompleteActions": "addjournalentry albase:bosshunt albase:bosshunt-subduction-maw albase:bosshunt-subduction-maw-title overwrite albase:bosshunt-subduction-maw-reward-journal-text",
+      "args": [
+        "albase:bosshunt-subduction-maw",
+        "subduction-maw",
+        "albase:bosshunt:subduction-maw",
+        "1"
+      ]
+    }
+  ],
+  "killObjectives": [],
+  "itemRewards": [],
+  "actionRewards": [
+    {
+      "id": "addreputation",
+      "args": [
+        "npc",
+        "albase:bosshunter",
+        "50"
+      ]
+    },
+    {
+      "id": "addreputation",
+      "args": [
+        "npc",
+        "albase:bosshunter",
+        "50",
+        "alegacyvsquest:rep-bosshunt-subduction-maw-once"
+      ]
+    },
+    {
+      "id": "randomquestitem",
+      "args": [
+        "1",
+        "albase:bosshunt-reward-duelist",
+        "albase:bosshunt-reward-subduction-filter",
+        "albase:bosshunt-reward-subduction-quiver"
+      ]
+    },
+    {
+      "id": "showquestfinaldialog",
+      "args": [
+        "albase:dialogue-bosshunter-final-title",
+        "albase:dialogue-bosshunter-final-text",
+        "albase:dialogue-bosshunter-final-option"
+      ]
+    },
+    {
+      "id": "notify",
+      "args": [
+        "albase:bosshunt-subduction-maw-reward"
+      ]
+    }
+  ]
+}

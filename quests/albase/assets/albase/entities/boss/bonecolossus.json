@@ -1,0 +1,360 @@
+{
+  "code": "bonecolossus",
+  "class": "EntityAgent",
+  "tags": ["alegacy-boss"],
+  "hitboxSize": { "x": 0.96, "y": 0.78 },
+  "deadHitboxSize": { "x": 0.78, "y": 0.6 },
+  "eyeHeight": 0.6,
+  "drops": [],
+  "attributes": {
+    "knockbackResistance": 1.0,
+    "killedByInfoText": "deadcreature-eaten-large",
+    "deadEntityCode": "albase:item-dead-creature-bonecolossus",
+    "reckless": true,
+    "vsquestSoundPitchMul": 0.45,
+    "alegacyvsquestHideInfoText": true
+  },
+  "client": {
+    "renderer": "Shape",
+    "shape": { "base": "game:entity/animal/mammal/wolf/eurasian-adult" },
+    "size": 1.05,
+    "texture": { "base": "albase:boss-bonecolossus-wolf" },
+    "behaviors": [
+      { "code": "repulseagents" },
+      { "code": "controlledphysics", "stepHeight": 1.1251 },
+      { "code": "floatupwhenstuck", "onlyWhenDead": true },
+      { "code": "interpolateposition" },
+      { "code": "boss", "bossHpBarRange": 70 },
+      { "code": "bossmusicurl", "musicKey": "theme_bosshunt_1", "range": 80, "startRange": 35, "combatTimeoutMs": 20000, "fadeOutSeconds": 4, "usePhases": true, "phaseSwitching": false, "phases": [ { "whenHealthRelBelow": 0.7, "startAtRel": 0.33333334 }, { "whenHealthRelBelow": 0.3, "startAtRel": 0.6666667 } ] },
+      { "code": "bossnametag", "nameLangKey": "item-creature-bonecolossus", "color": "#ff0000", "backgroundColor": "#000000", "backgroundOpacity": 0.35, "renderRange": 100 },
+      { "code": "bossgrowthritual" }
+    ],
+    "animations": [
+      { "code": "hurt", "animation": "hurt", "animationSpeed": 2.2, "weight": 10, "blendMode": "AddAverage" },
+      { "code": "die", "animation": "death", "animationSpeed": 1.25, "weight": 10, "blendMode": "Average", "triggeredBy": { "onControls": ["dead"] } },
+      { "code": "idle", "animation": "idle", "blendMode": "AddAverage", "triggeredBy": { "defaultAnim": true } },
+      { "code": "run", "animation": "run", "animationSpeed": 1.4, "blendMode": "Average" },
+      { "code": "walk", "animation": "walk", "animationSpeed": 1.2, "blendMode": "Average" },
+      { "code": "attack", "animation": "attack-withwindup", "animationSpeed": 1.2, "blendMode": "Average", "weight": 100 }
+    ]
+  },
+  "server": {
+    "behaviors": [
+      { "code": "repulseagents" },
+      { "code": "controlledphysics", "stepHeight": 1.1251 },
+      { "code": "health", "currenthealth": 1280, "maxhealth": 1280 },
+      { "code": "bosspassiveregen", "regenPerSecond": 0.75, "outOfCombatRegenMult": 0.8 },
+      {
+        "code": "bossgrowthritual",
+        "stages": [
+          {
+            "whenHealthRelBelow": 0.5,
+            "sizeMultiplier": 2.0,
+            "speedMultiplier": 1.9,
+            "animation": "hurt",
+            "animationMs": 600,
+            "sound": "weather/lightning-verynear",
+            "soundRange": 48,
+            "soundStartMs": 0,
+            "lightningFlash": true
+          }
+        ]
+      },
+      { "code": "bosscombatmarker", "trackCombatTime": true },
+      { "code": "bosshastargetsync" },
+      { "code": "questtarget", "targetId": "albase:bosshunt:bonecolossus", "leashRange": 120, "returnMoveSpeed": 0.075, "leashCheckMs": 1000 },
+      {
+        "code": "bossanticheese",
+        "stages": [
+          {
+            "whenHealthRelBelow": 0.95,
+            "checkIntervalMs": 350,
+            "cooldownSeconds": 13,
+            "searchRange": 42,
+            "farRange": 18,
+            "farSeconds": 2.6,
+            "noLosSeconds": 2.2,
+            "minRadius": 4,
+            "maxRadius": 7,
+            "tries": 12,
+            "requireSolidGround": true,
+            "windupMs": 220,
+            "windupAnimation": "run",
+            "arriveAnimation": "attack-withwindup",
+            "sound": "albase:dark-magic-charge-up",
+            "soundRange": 40,
+            "soundStartMs": 0,
+            "soundVolume": 0.5
+          }
+        ]
+      },
+      {
+        "code": "emotionstates",
+        "states": [
+          { "code": "aggressiveondamage", "duration": 30, "chance": 1, "slot": 0, "priority": 0.5, "accumType": "noaccum" },
+          { "code": "bonecolossus-rage", "duration": 999999, "chance": 1, "slot": 1, "priority": 1, "accumType": "noaccum", "whenHealthRelBelow": 0.65 },
+          { "code": "bonecolossus-unstable", "duration": 999999, "chance": 1, "slot": 1, "priority": 2, "accumType": "noaccum", "whenHealthRelBelow": 0.3 }
+        ]
+      },
+      {
+        "code": "bossdash",
+        "stages": [
+          {
+            "whenHealthRelBelow": 0.65,
+            "cooldownSeconds": 6,
+            "minTargetRange": 5,
+            "maxTargetRange": 20,
+            "windupMs": 350,
+            "dashMs": 320,
+            "dashSpeed": 1.6,
+            "windupAnimation": "run",
+            "dashAnimation": "run",
+            "sound": "game:sounds/creature/wolf/attack1",
+            "soundRange": 24,
+            "soundStartMs": 150,
+            "soundVolume": 0.5
+          },
+          {
+            "whenHealthRelBelow": 0.3,
+            "cooldownSeconds": 4,
+            "minTargetRange": 6,
+            "maxTargetRange": 24,
+            "windupMs": 250,
+            "dashMs": 360,
+            "dashSpeed": 1.75,
+            "windupAnimation": "run",
+            "dashAnimation": "run",
+            "sound": "game:sounds/creature/wolf/attack1",
+            "soundRange": 28,
+            "soundStartMs": 120,
+            "soundVolume": 0.5
+          }
+        ]
+      },
+      {
+        "code": "bossrepulsestun",
+        "stages": [
+          {
+            "whenHealthRelBelow": 0.85,
+            "cooldownSeconds": 10,
+            "range": 6.5,
+            "knockbackStrength": 0.0,
+            "maxPlayerMotion": 0.45,
+            "stunMs": 900,
+            "victimWalkSpeedMult": 0.0,
+            "sound": "albase:shock-sound-effect-horror",
+            "soundRange": 26,
+            "soundStartMs": 0,
+            "soundVolume": 0.5
+          },
+          {
+            "whenHealthRelBelow": 0.35,
+            "cooldownSeconds": 8,
+            "range": 7.2,
+            "knockbackStrength": 0.0,
+            "maxPlayerMotion": 0.55,
+            "stunMs": 1100,
+            "victimWalkSpeedMult": 0.0,
+            "sound": "albase:shock-sound-effect-horror",
+            "soundRange": 30,
+            "soundStartMs": 0,
+            "soundVolume": 0.5
+          }
+        ]
+      },
+      {
+        "code": "bosssummonritual",
+        "stages": [
+          {
+            "whenHealthRelBelow": 0.75,
+            "entityCode": "albase:bone-wolf",
+            "maxNearby": 4,
+            "nearbyRange": 35,
+            "minCount": 1,
+            "maxCount": 2,
+            "ritualMs": 2400,
+            "cooldownSeconds": 18,
+            "spawnRange": 9,
+            "animation": "howl",
+            "sound": "game:sounds/creature/wolf/howl1",
+            "soundRange": 40,
+            "soundStartMs": 0,
+            "spawnDelayMs": 350
+          },
+          {
+            "whenHealthRelBelow": 0.4,
+            "entityCode": "albase:bone-wolf",
+            "maxNearby": 8,
+            "nearbyRange": 35,
+            "minCount": 2,
+            "maxCount": 3,
+            "ritualMs": 2600,
+            "cooldownSeconds": 11,
+            "spawnRange": 11,
+            "animation": "howl",
+            "sound": "game:sounds/creature/wolf/howl1",
+            "soundRange": 45,
+            "soundStartMs": 0,
+            "spawnDelayMs": 300
+          }
+        ]
+      },
+      {
+        "code": "bossdamageinvulnerability"
+      },
+      {
+        "code": "bosspushback",
+        "stages": [
+          { "whenHealthRelBelow": 0.7, "cooldownSeconds": 11, "range": 4.5, "force": 0.9 },
+          { "whenHealthRelBelow": 0.35, "cooldownSeconds": 7, "range": 5.5, "force": 1.2 }
+        ]
+      },
+      {
+        "code": "bossstillnessmark",
+        "stages": [
+          { "whenHealthRelBelow": 0.65, "cooldownSeconds": 14, "range": 15, "durationMs": 2800, "playerStunMs": 2200 }
+        ]
+      },
+      {
+        "code": "bosswoundedmark",
+        "stages": [
+          { "whenHealthRelBelow": 0.55, "cooldownSeconds": 16, "range": 18, "damageBoost": 0.14, "markDurationSeconds": 15 },
+          { "whenHealthRelBelow": 0.25, "cooldownSeconds": 10, "range": 22, "damageBoost": 0.24, "markDurationSeconds": 15 }
+        ]
+      },
+      {
+        "code": "bosssurroundedresponse",
+        "stages": [
+          { "whenHealthRelBelow": 0.6, "cooldownSeconds": 18, "minPlayers": 3, "range": 28, "response": "howl" }
+        ]
+      },
+      {
+        "code": "taskai",
+        "aitasks": [
+          {
+            "code": "seekentity",
+            "entityCodes": ["player"],
+            "priority": 1.55,
+            "mincooldown": 300,
+            "maxcooldown": 650,
+            "movespeed": 0.12,
+            "seekingRange": 30,
+            "maxFollowTime": 120,
+            "animation": "run",
+            "animationSpeed": 1.3,
+            "whenInEmotionState": "bonecolossus-unstable"
+          },
+          {
+            "code": "meleeattack",
+            "entityCodes": ["player"],
+            "priority": 2,
+            "damage": 30.0,
+            "damageTier": 3,
+            "minDist": 4.4,
+            "minVerDist": 3.4,
+            "attackAngleRangeDeg": 140,
+            "mincooldown": 420,
+            "maxcooldown": 1400,
+            "attackDurationMs": 1200,
+            "damagePlayerAtMs": 820,
+            "animation": "attack-withwindup",
+            "animationSpeed": 1.2,
+            "sound": "game:sounds/creature/wolf/attack1",
+            "soundVolume": 3
+          },
+          {
+            "code": "meleeattack",
+            "entityCodes": ["player"],
+            "priority": 2.2,
+            "damage": 30.0,
+            "damageTier": 4,
+            "minDist": 5.6,
+            "minVerDist": 4.0,
+            "attackAngleRangeDeg": 140,
+            "mincooldown": 2200,
+            "maxcooldown": 3600,
+            "attackDurationMs": 1400,
+            "damagePlayerAtMs": 900,
+            "animation": "attack-withwindup",
+            "animationSpeed": 1.0,
+            "sound": "game:sounds/creature/wolf/attack1",
+            "soundStartMs": 250,
+            "soundVolume": 3,
+            "whenInEmotionState": "bonecolossus-rage|bonecolossus-unstable"
+          },
+          {
+            "code": "meleeattack",
+            "entityCodes": ["player"],
+            "priority": 2.4,
+            "damage": 28.5,
+            "damageTier": 4,
+            "minDist": 6.0,
+            "minVerDist": 4.2,
+            "attackAngleRangeDeg": 160,
+            "mincooldown": 2000,
+            "maxcooldown": 3000,
+            "attackDurationMs": 1200,
+            "damagePlayerAtMs": 900,
+            "animation": "attack-withwindup",
+            "animationSpeed": 0.9,
+            "sound": "game:sounds/creature/wolf/attack1",
+            "soundStartMs": 250,
+            "soundVolume": 3,
+            "whenInEmotionState": "bonecolossus-unstable"
+          },
+          {
+            "code": "meleeattack",
+            "entityCodes": ["player"],
+            "priority": 2.6,
+            "damage": 30.0,
+            "damageTier": 4,
+            "minDist": 6.2,
+            "minVerDist": 4.2,
+            "attackAngleRangeDeg": 200,
+            "mincooldown": 2800,
+            "maxcooldown": 4000,
+            "attackDurationMs": 1200,
+            "damagePlayerAtMs": 720,
+            "animation": "attack-withwindup",
+            "animationSpeed": 1.05,
+            "sound": "game:sounds/creature/wolf/attack1",
+            "soundStartMs": 200,
+            "soundVolume": 3,
+            "whenInEmotionState": "bonecolossus-rage|bonecolossus-unstable"
+          },
+          {
+            "code": "seekentity",
+            "entityCodes": ["player"],
+            "priority": 1.5,
+            "mincooldown": 300,
+            "maxcooldown": 650,
+            "movespeed": 0.06,
+            "seekingRange": 30,
+            "maxFollowTime": 120,
+            "animation": "run",
+            "animationSpeed": 1.3
+          },
+          {
+            "code": "wander",
+            "priority": 1.0,
+            "movespeed": 0.03,
+            "animation": "walk",
+            "animationSpeed": 1.1,
+            "preferredLightLevel": 15
+          },
+          { "code": "lookaround", "priority": 0.5 }
+        ]
+      },
+      { "code": "deaddecay", "hoursToDecay": 999999 },
+      { "code": "bossrespawn", "respawnInGameHours": 24, "spawnNewBoss": false },
+      { "code": "floatupwhenstuck", "onlyWhenDead": true }
+    ]
+  },
+  "idleSoundRange": 32,
+  "idleSoundChance": 0.03,
+  "sounds": {
+    "hurt": "game:sounds/creature/wolf/hurt",
+    "death": "albase:bosshunt_1",
+    "idle": "game:sounds/creature/wolf/howl*"
+  }
+}

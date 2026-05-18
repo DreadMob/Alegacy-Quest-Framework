@@ -1,0 +1,99 @@
+{
+  "id": "albase:bosshunt-bonecolossus",
+  "cooldown": 75,
+  "perPlayer": true,
+  "predecessor": "albase:bosshunt-intro",
+  "onAcceptedActions": [
+    {
+      "id": "playsound",
+      "args": [
+        "alegacyvsquest:sounds/queacc",
+        "0.175"
+      ]
+    },
+    {
+      "id": "preloadbossmusic",
+      "args": [
+        "https://drive.google.com/uc?export=download&id=1SbLjPIKI4hIDmilOupbbha2iyesbhTRy"
+      ]
+    },
+    {
+      "id": "addjournalentry",
+      "args": [
+        "albase:bosshunt",
+        "albase:bosshunt-bonecolossus",
+        "albase:bosshunt-bonecolossus-title",
+        "albase:bosshunt-bonecolossus-journal-text"
+      ]
+    },
+    {
+      "id": "notify",
+      "args": [
+        "albase:bosshunt-use-tracker"
+      ]
+    },
+    {
+      "id": "notify",
+      "args": [
+        "albase:bosshunt-rotation-info"
+      ]
+    }
+  ],
+  "actionObjectives": [
+    {
+      "id": "killactiontarget",
+      "objectiveId": "bonecolossus",
+      "onCompleteActions": "addjournalentry albase:bosshunt albase:bosshunt-bonecolossus albase:bosshunt-bonecolossus-title overwrite albase:bosshunt-bonecolossus-reward-journal-text",
+      "args": [
+        "albase:bosshunt-bonecolossus",
+        "bonecolossus",
+        "albase:bosshunt:bonecolossus",
+        "1"
+      ]
+    }
+  ],
+  "killObjectives": [],
+  "itemRewards": [],
+  "actionRewards": [
+    {
+      "id": "addreputation",
+      "args": [
+        "npc",
+        "albase:bosshunter",
+        "50"
+      ]
+    },
+    {
+      "id": "addreputation",
+      "args": [
+        "npc",
+        "albase:bosshunter",
+        "50",
+        "alegacyvsquest:rep-bosshunt-bonecolossus-once"
+      ]
+    },
+    {
+      "id": "randomquestitem",
+      "args": [
+        "1",
+        "albase:bosshunt-reward-sea-spirit",
+        "albase:bosshunt-reward-life-amulet",
+        "albase:bosshunt-reward-ultrawarm-coat"
+      ]
+    },
+    {
+      "id": "showquestfinaldialog",
+      "args": [
+        "albase:dialogue-bosshunter-final-title",
+        "albase:dialogue-bosshunter-final-text",
+        "albase:dialogue-bosshunter-final-option"
+      ]
+    },
+    {
+      "id": "notify",
+      "args": [
+        "albase:bosshunt-bonecolossus-reward"
+      ]
+    }
+  ]
+}

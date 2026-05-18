@@ -1,0 +1,760 @@
+{
+  "code": "crypt-mirror",
+  "class": "EntityPlayerBot",
+  "tags": ["alegacy-boss"],
+  "canClimb": true,
+  "hitboxSize": { "x": 0.6, "y": 1.75 },
+  "eyeHeight": 1.65,
+  "drops": [],
+  "attributes": {
+    "skinnableParts": [
+      {
+        "code": "baseskin",
+        "type": "texture",
+        "variants": [
+          { "code": "skin1", "texture": "entity/humanoid/seraphskinparts/body/skin1" },
+          { "code": "skin2", "texture": "entity/humanoid/seraphskinparts/body/skin2" },
+          { "code": "skin3", "texture": "entity/humanoid/seraphskinparts/body/skin3" },
+          { "code": "skin4", "texture": "entity/humanoid/seraphskinparts/body/skin4" },
+          { "code": "skin5", "texture": "entity/humanoid/seraphskinparts/body/skin5" },
+          { "code": "skin6", "texture": "entity/humanoid/seraphskinparts/body/skin6" },
+          { "code": "skin7", "texture": "entity/humanoid/seraphskinparts/body/skin7" },
+          { "code": "skin8", "texture": "entity/humanoid/seraphskinparts/body/skin8" },
+          { "code": "skin9", "texture": "entity/humanoid/seraphskinparts/body/skin9" },
+          { "code": "skin10", "texture": "entity/humanoid/seraphskinparts/body/skin10" },
+          { "code": "skin11", "texture": "entity/humanoid/seraphskinparts/body/skin11" },
+          { "code": "skin12", "texture": "entity/humanoid/seraphskinparts/body/skin12" },
+          { "code": "skin13", "texture": "entity/humanoid/seraphskinparts/body/skin13" },
+          { "code": "skin14", "texture": "entity/humanoid/seraphskinparts/body/skin14" },
+          { "code": "skin15", "texture": "entity/humanoid/seraphskinparts/body/skin15" },
+          { "code": "skin16", "texture": "entity/humanoid/seraphskinparts/body/skin16" },
+          { "code": "skin17", "texture": "entity/humanoid/seraphskinparts/body/skin17" },
+          { "code": "skin18", "texture": "entity/humanoid/seraphskinparts/body/skin18" },
+          { "code": "skin19", "texture": "entity/humanoid/seraphskinparts/body/skin19" },
+          { "code": "skin20", "texture": "entity/humanoid/seraphskinparts/body/skin20" }
+        ]
+      },
+      {
+        "code": "eyecolor",
+        "type": "texture",
+        "textureRenderTo": { "x": 109, "y": 0 },
+        "variants": [
+          { "code": "acid-green", "texture": "entity/humanoid/seraphskinparts/eyes/acid-green" },
+          { "code": "aquamarine", "texture": "entity/humanoid/seraphskinparts/eyes/aquamarine" },
+          { "code": "azure", "texture": "entity/humanoid/seraphskinparts/eyes/azure" },
+          { "code": "bitter-lemon", "texture": "entity/humanoid/seraphskinparts/eyes/bitter-lemon" },
+          { "code": "cadmium-orange", "texture": "entity/humanoid/seraphskinparts/eyes/cadmium-orange" },
+          { "code": "citron", "texture": "entity/humanoid/seraphskinparts/eyes/citron" },
+          { "code": "dark-green", "texture": "entity/humanoid/seraphskinparts/eyes/dark-green" },
+          { "code": "forest-green", "texture": "entity/humanoid/seraphskinparts/eyes/forest-green" },
+          { "code": "goldenrod", "texture": "entity/humanoid/seraphskinparts/eyes/goldenrod" },
+          { "code": "jade", "texture": "entity/humanoid/seraphskinparts/eyes/jade" },
+          { "code": "lavander", "texture": "entity/humanoid/seraphskinparts/eyes/lavander" },
+          { "code": "malachite", "texture": "entity/humanoid/seraphskinparts/eyes/malachite" },
+          { "code": "mantis", "texture": "entity/humanoid/seraphskinparts/eyes/mantis" },
+          { "code": "midnight", "texture": "entity/humanoid/seraphskinparts/eyes/midnight" },
+          { "code": "phthalo-blue", "texture": "entity/humanoid/seraphskinparts/eyes/phthalo-blue" },
+          { "code": "purple", "texture": "entity/humanoid/seraphskinparts/eyes/purple" },
+          { "code": "sand", "texture": "entity/humanoid/seraphskinparts/eyes/sand" },
+          { "code": "sapphire", "texture": "entity/humanoid/seraphskinparts/eyes/sapphire" }
+        ]
+      },
+      {
+        "code": "underwear",
+        "type": "texture",
+        "useDropDown": true,
+        "textureRenderTo": { "x": 0, "y": 0 },
+        "variants": [
+          { "code": "twopiece", "texture": "entity/humanoid/seraphskinparts/underwear/twopiece" },
+          { "code": "leotard", "texture": "entity/humanoid/seraphskinparts/underwear/leotard" },
+          { "code": "breeches", "texture": "entity/humanoid/seraphskinparts/underwear/breeches" }
+        ]
+      },
+      {
+        "code": "voicetype",
+        "type": "voice",
+        "useDropDown": true,
+        "variants": [
+          { "code": "altoflute", "sound": "sounds/voice/altoflute" },
+          { "code": "harmonica", "sound": "sounds/voice/harmonica" },
+          { "code": "oboe", "sound": "sounds/voice/oboe" },
+          { "code": "clarinete", "sound": "sounds/voice/clarinete" },
+          { "code": "accordion", "sound": "sounds/voice/accordion" },
+          { "code": "trumpet", "sound": "sounds/voice/trumpet" },
+          { "code": "tuba", "sound": "sounds/voice/tuba" }
+        ]
+      },
+      {
+        "code": "voicepitch",
+        "type": "voice",
+        "colbreak": true,
+        "useDropDown": true,
+        "variants": [
+          { "code": "verylow" },
+          { "code": "low" },
+          { "code": "medium" },
+          { "code": "high" },
+          { "code": "veryhigh" }
+        ]
+      },
+      {
+        "code": "hairbase",
+        "type": "shape",
+        "shapeTemplate": { "base": "entity/humanoid/seraphskinparts/hair-base/{code}" },
+        "variants": [
+          { "code": "bald" },
+          { "code": "balding" },
+          { "code": "afro" },
+          { "code": "combed" },
+          { "code": "dreadlocks" },
+          { "code": "indigenousbalding" },
+          { "code": "iroquois" },
+          { "code": "kniaz" },
+          { "code": "layered" },
+          { "code": "longflowing" },
+          { "code": "longwithstrands" },
+          { "code": "mediumlength-bangs" },
+          { "code": "messy" },
+          { "code": "messy2" },
+          { "code": "classic" },
+          { "code": "short" },
+          { "code": "short-parted" },
+          { "code": "shortspiky" },
+          { "code": "short-trimmed" },
+          { "code": "tonsure" }
+        ]
+      },
+      {
+        "code": "hairextra",
+        "type": "shape",
+        "shapeTemplate": { "base": "entity/humanoid/seraphskinparts/hair-extra/{code}" },
+        "variants": [
+          { "code": "none" },
+          { "code": "backbun" },
+          { "code": "braidedup" },
+          { "code": "elaboratestickbun" },
+          { "code": "headsidebraid" },
+          { "code": "largestickbun" },
+          { "code": "neatbraid" },
+          { "code": "classicponytail" },
+          { "code": "ponytail" },
+          { "code": "rolledbraidwithbun" },
+          { "code": "shortmessybraid" },
+          { "code": "sidebraids" },
+          { "code": "sidebuns" },
+          { "code": "siderolls" },
+          { "code": "snood" },
+          { "code": "thicklongfrenchbraid" },
+          { "code": "tiedback" },
+          { "code": "tieddreads" },
+          { "code": "tiedtopknot" },
+          { "code": "topbun" },
+          { "code": "topknot" },
+          { "code": "unkempt" },
+          { "code": "vikingtopbraid" }
+        ]
+      },
+      {
+        "code": "facialexpression",
+        "type": "shape",
+        "variants": [
+          { "code": "angry", "shape": { "base": "entity/humanoid/seraphskinparts/face/angry" } },
+          { "code": "grin", "shape": { "base": "entity/humanoid/seraphskinparts/face/grin" } },
+          { "code": "smirk", "shape": { "base": "entity/humanoid/seraphskinparts/face/smirk" } },
+          { "code": "kind", "shape": { "base": "entity/humanoid/seraphskinparts/face/kind" } },
+          { "code": "upset", "shape": { "base": "entity/humanoid/seraphskinparts/face/upset" } },
+          { "code": "neutral", "shape": { "base": "entity/humanoid/seraphskinparts/face/neutral" } },
+          { "code": "sad", "shape": { "base": "entity/humanoid/seraphskinparts/face/sad" } },
+          { "code": "serious", "shape": { "base": "entity/humanoid/seraphskinparts/face/serious" } },
+          { "code": "tired", "shape": { "base": "entity/humanoid/seraphskinparts/face/tired" } },
+          { "code": "very-sad", "shape": { "base": "entity/humanoid/seraphskinparts/face/very-sad" } }
+        ]
+      },
+      {
+        "code": "mustache",
+        "type": "shape",
+        "shapeTemplate": { "base": "entity/humanoid/seraphskinparts/hair-face/{code}" },
+        "variants": [
+          { "code": "none" },
+          { "code": "mst-line01-pencil" },
+          { "code": "mst-line05-seargent" },
+          { "code": "mst-line10-sheriff" },
+          { "code": "mst-line15-eccentric" },
+          { "code": "mst-line20-seagull" },
+          { "code": "mst-u01-horseshoe" },
+          { "code": "mst-u05-stirrups" },
+          { "code": "mst-walrus05-neat" },
+          { "code": "mst-walrus30-fat" },
+          { "code": "mst-whiskbroom" }
+        ]
+      },
+      {
+        "code": "beard",
+        "type": "shape",
+        "shapeTemplate": { "base": "entity/humanoid/seraphskinparts/hair-face/{code}" },
+        "variants": [
+          { "code": "none" },
+          { "code": "brd-stubble" },
+          { "code": "brd-box05-anchor" },
+          { "code": "brd-box01-chincurtain" },
+          { "code": "brd-box07-ducktail" },
+          { "code": "brd-box10-short" },
+          { "code": "brd-box20-full" },
+          { "code": "brd-chin01-mouche" },
+          { "code": "brd-chin05-chinpatch" },
+          { "code": "brd-chin10-chinpuff" },
+          { "code": "brd-chin15-goatee" },
+          { "code": "brd-chin20-goateehorns" },
+          { "code": "brd-full01-trimmedfull" },
+          { "code": "brd-full05-cleanfull" },
+          { "code": "brd-full10-shaggy" },
+          { "code": "brd-mut05-friendly" },
+          { "code": "brd-mut10-muttonchops" },
+          { "code": "brd-mut15-wildchops" },
+          { "code": "brd-side05-sideburns" },
+          { "code": "brd-side15-sidewhiskers" },
+          { "code": "brd-wisp10-wiseman" }
+        ]
+      },
+      {
+        "code": "haircolor",
+        "type": "texture",
+        "textureTarget": "hair",
+        "textureTemplate": "entity/humanoid/seraphskinparts/hair/{code}",
+        "variants": [
+          { "code": "lightgray" },
+          { "code": "silverchalice" },
+          { "code": "slategray" },
+          { "code": "eerieblack" },
+          { "code": "mossgreen" },
+          { "code": "seagreen" },
+          { "code": "wintergreendream" },
+          { "code": "steelblue" },
+          { "code": "queenblue" },
+          { "code": "indigodye" },
+          { "code": "heliotropegray" },
+          { "code": "palatinatepurple" },
+          { "code": "darkpurple" },
+          { "code": "wheat" },
+          { "code": "ecru" },
+          { "code": "sanddune" },
+          { "code": "harvestgold" },
+          { "code": "cordovan" },
+          { "code": "rosewood" },
+          { "code": "russet" },
+          { "code": "liver" },
+          { "code": "oldburgundy" }
+        ]
+      }
+    ],
+    "alegacyvsquestNoUndress": true,
+    "alegacyvsquestHideInfoText": true,
+    "inventory": [
+      { "type": "item", "code": "game:armor-head-antique-forlorn-damaged" },
+      { "type": "item", "code": "game:armor-body-antique-forlorn-damaged" },
+      { "type": "item", "code": "game:armor-legs-antique-forlorn-damaged" }
+    ]
+  },
+  "client": {
+    "renderer": "Shape",
+    "size": 1.1,
+    "shape": { "base": "game:entity/humanoid/seraph-faceless" },
+    "texture": { "base": "albase:boss-crypt-mirror-seraph-naked-hairless" },
+    "behaviors": [
+      { "code": "nametag", "showtagonlywhentargeted": true },
+      { "code": "repulseagents" },
+      { "code": "controlledphysics", "stepHeight": 1.01 },
+      { "code": "interpolateposition" },
+      { "code": "extraskinnable" },
+      { "code": "seraphinventory" },
+      { "code": "boss", "bossHpBarRange": 80 },
+      { "code": "bossmusicurl", "musicKey": "theme_bosshunt_3", "range": 120, "startRange": 40, "combatTimeoutMs": 20000, "fadeOutSeconds": 4 },
+      { "code": "bossnametag", "nameLangKey": "item-creature-crypt-mirror", "color": "#ff0000", "backgroundColor": "#000000", "backgroundOpacity": 0.35, "renderRange": 120 }
+    ],
+    "animations": [
+      { "code": "walk", "animation": "walk", "blendMode": "Average", "mulWithWalkSpeed": true, "animationSpeed": 1.1 },
+      { "code": "run", "animation": "run", "blendMode": "Average", "mulWithWalkSpeed": true, "animationSpeed": 1.2 },
+      { "code": "hit", "animation": "swordhit", "blendMode": "Average", "animationSpeed": 1.1 },
+      { "code": "attack", "animation": "lazy-attack", "blendMode": "Average", "weight": 10, "animationSpeed": 1.2 },
+      { "code": "sneakidle", "animation": "sneakidle", "blendMode": "Average" },
+      { "code": "die", "animation": "die", "animationSpeed": 1.75, "weight": 10, "blendMode": "AddAverage" },
+      { "code": "hurt", "animation": "hurt", "animationSpeed": 2, "blendMode": "AddAverage" },
+      { "code": "idle", "animation": "idle", "blendMode": "AddAverage", "triggeredBy": { "defaultAnim": true } }
+    ]
+  },
+  "server": {
+    "behaviors": [
+      { "code": "repulseagents" },
+      { "code": "controlledphysics", "stepHeight": 1.01 },
+      { "code": "health", "currenthealth": 1040, "maxhealth": 1040 },
+      { "code": "bosspassiveregen", "regenPerSecond": 0.75, "outOfCombatRegenMult": 0.8 },
+      { "code": "bosscombatmarker", "trackCombatTime": true },
+      { "code": "bosshastargetsync" },
+      { "code": "questtarget", "targetId": "albase:bosshunt:crypt-mirror", "leashRange": 120, "returnMoveSpeed": 0.04, "leashCheckMs": 1000 },
+      {
+        "code": "bossplayerclone",
+        "stages": [
+          {
+            "whenHealthRelBelow": 1.0,
+            "cloneEntityCode": "albase:crypt-mirror-clone",
+            "cloneRange": 50
+          }
+        ]
+      },
+      {
+        "code": "bosshook",
+        "stages": [
+          {
+            "whenHealthRelBelow": 0.85,
+            "cooldownSeconds": 12,
+            "minTargetRange": 3,
+            "maxTargetRange": 22,
+            "windupMs": 250,
+            "pullMs": 850,
+            "pullSpeed": 0.12,
+            "maxPlayerMotion": 0.22,
+            "windupAnimation": "hit",
+            "pullAnimation": "attack",
+            "sound": "game:sounds/creature/wolf/attack1",
+            "soundRange": 24,
+            "soundStartMs": 120,
+            "soundVolume": 3
+          },
+          {
+            "whenHealthRelBelow": 0.45,
+            "cooldownSeconds": 9,
+            "minTargetRange": 3,
+            "maxTargetRange": 26,
+            "windupMs": 200,
+            "pullMs": 900,
+            "pullSpeed": 0.14,
+            "maxPlayerMotion": 0.24,
+            "windupAnimation": "hit",
+            "pullAnimation": "attack",
+            "sound": "albase:dash",
+            "soundRange": 26,
+            "soundStartMs": 100,
+            "soundVolume": 0.18
+          }
+        ]
+      },
+      {
+        "code": "bossgrab",
+        "stages": [
+          {
+            "whenHealthRelBelow": 0.7,
+            "cooldownSeconds": 14,
+            "minTargetRange": 0,
+            "maxTargetRange": 3.0,
+            "windupMs": 200,
+            "grabMs": 2200,
+            "victimWalkSpeedMult": 0.08,
+            "damageIntervalMs": 550,
+            "damage": 0.2,
+            "damageTier": 4,
+            "damageType": "PiercingAttack",
+            "windupAnimation": "hit",
+            "grabAnimation": "attack",
+            "sound": "albase:shock-sound-effect-horror",
+            "soundRange": 24,
+            "soundStartMs": 0,
+            "soundVolume": 0.18
+          },
+          {
+            "whenHealthRelBelow": 0.35,
+            "cooldownSeconds": 11,
+            "minTargetRange": 0,
+            "maxTargetRange": 3.6,
+            "windupMs": 150,
+            "grabMs": 2600,
+            "victimWalkSpeedMult": 0.05,
+            "damageIntervalMs": 500,
+            "damage": 0.8,
+            "damageTier": 4,
+            "damageType": "PiercingAttack",
+            "windupAnimation": "hit",
+            "grabAnimation": "attack",
+            "sound": "albase:horror-hit",
+            "soundRange": 26,
+            "soundStartMs": 0,
+            "soundVolume": 0.18
+          }
+        ]
+      },
+      {
+        "code": "bossdash",
+        "stages": [
+          {
+            "whenHealthRelBelow": 0.75,
+            "cooldownSeconds": 8,
+            "minTargetRange": 4,
+            "maxTargetRange": 20,
+            "windupMs": 250,
+            "dashMs": 240,
+            "dashSpeed": 1.3,
+            "dashDirection": "side",
+            "windupAnimation": "hit",
+            "dashAnimation": "run",
+            "sound": "game:sounds/creature/wolf/attack1",
+            "soundRange": 20,
+            "soundStartMs": 120,
+            "soundVolume": 0.18
+          },
+          {
+            "whenHealthRelBelow": 0.4,
+            "cooldownSeconds": 7,
+            "minTargetRange": 5,
+            "maxTargetRange": 24,
+            "windupMs": 200,
+            "dashMs": 280,
+            "dashSpeed": 1.45,
+            "dashDirection": "back",
+            "windupAnimation": "hit",
+            "dashAnimation": "run",
+            "sound": "albase:dash",
+            "soundRange": 22,
+            "soundStartMs": 120,
+            "soundVolume": 0.18
+          }
+        ]
+      },
+      {
+        "code": "bossparasiteleech",
+        "stages": [
+          {
+            "whenHealthRelBelow": 0.8,
+            "cooldownSeconds": 14,
+            "minTargetRange": 3,
+            "maxTargetRange": 24,
+            "durationMs": 6500,
+            "tickIntervalMs": 800,
+            "damagePerTick": 3.0,
+            "damageTier": 2,
+            "damageType": "PiercingAttack",
+            "healBossPerTick": 0,
+            "healBossRelPerTick": 0.004,
+            "victimWalkSpeedDelta": -0.12,
+            "victimHealingDelta": -0.25,
+            "victimHungerRateDelta": 0.18,
+            "sound": "albase:shock-sound-effect-horror",
+            "soundRange": 24,
+            "soundStartMs": 0,
+            "loopSound": "albase:dark-magic-charge-up",
+            "loopSoundRange": 18,
+            "loopSoundIntervalMs": 950
+          },
+          {
+            "whenHealthRelBelow": 0.4,
+            "cooldownSeconds": 12,
+            "minTargetRange": 3,
+            "maxTargetRange": 26,
+            "durationMs": 7500,
+            "tickIntervalMs": 750,
+            "damagePerTick": 3.5,
+            "damageTier": 3,
+            "damageType": "PiercingAttack",
+            "healBossPerTick": 0,
+            "healBossRelPerTick": 0.006,
+            "victimWalkSpeedDelta": -0.16,
+            "victimHealingDelta": -0.32,
+            "victimHungerRateDelta": 0.24,
+            "sound": "albase:horror-hit",
+            "soundRange": 26,
+            "soundStartMs": 0,
+            "loopSound": "albase:dark-magic-charge-up",
+            "loopSoundRange": 18,
+            "loopSoundIntervalMs": 900
+          }
+        ]
+      },
+      {
+        "code": "bosstrapclone",
+        "stages": [
+          {
+            "whenHealthRelBelow": 0.7,
+            "cooldownSeconds": 16,
+            "minTargetRange": 6,
+            "maxTargetRange": 28,
+            "trapEntityCode": "albase:crypt-mirror-trap",
+            "spawnRange": 4.5,
+            "trapCount": 1,
+            "windupMs": 200,
+            "windupAnimation": "hit",
+            "fuseMs": 1400,
+            "explosionRadius": 3.2,
+            "explosionDamage": 9.0,
+            "damageTier": 3,
+            "damageType": "PiercingAttack",
+            "trapInvulnerable": false,
+            "sound": "game:sounds/creature/wolf/attack1",
+            "soundRange": 22,
+            "soundStartMs": 120,
+            "soundVolume": 0.18,
+            "explodeSound": "albase:shock-sound-effect-horror",
+            "explodeSoundRange": 28,
+            "explodeSoundVolume": 0.2
+          },
+          {
+            "whenHealthRelBelow": 0.35,
+            "cooldownSeconds": 14,
+            "minTargetRange": 6,
+            "maxTargetRange": 30,
+            "trapEntityCode": "albase:crypt-mirror-trap",
+            "spawnRange": 5.5,
+            "trapCount": 2,
+            "windupMs": 150,
+            "windupAnimation": "hit",
+            "fuseMs": 1300,
+            "explosionRadius": 3.6,
+            "explosionDamage": 10.0,
+            "damageTier": 4,
+            "damageType": "PiercingAttack",
+            "trapInvulnerable": false,
+            "sound": "albase:dash",
+            "soundRange": 22,
+            "soundStartMs": 100,
+            "soundVolume": 0.18,
+            "explodeSound": "albase:shock-sound-effect-horror",
+            "explodeSoundRange": 30,
+            "explodeSoundVolume": 0.2
+          }
+        ]
+      },
+      {
+        "code": "bossmindcontrol",
+        "stages": [
+          {
+            "whenHealthRelBelow": 0.6,
+            "cooldownSeconds": 25,
+            "controlDurationSeconds": 5,
+            "controlRange": 30,
+            "victimMoveSpeed": 0.04,
+            "attackDamage": 8,
+            "attackDamageTier": 3,
+            "controlSound": "albase:dark-magic-charge-up"
+          },
+          {
+            "whenHealthRelBelow": 0.3,
+            "cooldownSeconds": 18,
+            "controlDurationSeconds": 6,
+            "controlRange": 35,
+            "victimMoveSpeed": 0.05,
+            "attackDamage": 12,
+            "attackDamageTier": 4,
+            "controlSound": "albase:deathmagic"
+          }
+        ]
+      },
+      {
+        "code": "bossashfloor",
+        "stages": [
+          {
+            "whenHealthRelBelow": 0.7,
+            "cooldownSeconds": 22,
+            "minTargetRange": 4,
+            "maxTargetRange": 35,
+            "minRadius": 2,
+            "maxRadius": 6,
+            "tries": 8,
+            "blockCount": 40,
+            "durationMs": 12000,
+            "tickIntervalMs": 1200,
+            "victimWalkSpeedMult": 0.4,
+            "windupMs": 300,
+            "windupAnimation": "hit",
+            "sound": "albase:mechanical/mecha plimm",
+            "soundRange": 20,
+            "soundStartMs": 0,
+            "soundVolume": 0.4
+          },
+          {
+            "whenHealthRelBelow": 0.35,
+            "cooldownSeconds": 16,
+            "minTargetRange": 4,
+            "maxTargetRange": 40,
+            "minRadius": 4,
+            "maxRadius": 9,
+            "tries": 10,
+            "blockCount": 60,
+            "durationMs": 18000,
+            "tickIntervalMs": 1000,
+            "victimWalkSpeedMult": 0.35,
+            "windupMs": 200,
+            "windupAnimation": "hit",
+            "sound": "albase:mechanical/mecha rage",
+            "soundRange": 24,
+            "soundStartMs": 0,
+            "soundVolume": 0.4
+          }
+        ]
+      },
+      {
+        "code": "bosssummonritual",
+        "stages": [
+          {
+            "whenHealthRelBelow": 0.75,
+            "cooldownSeconds": 30,
+            "spawns": [
+              { "entityCode": "albase:bone-wolf", "minCount": 1, "maxCount": 1 },
+              { "entityCode": "albase:distorted-locust", "minCount": 1, "maxCount": 2 }
+            ],
+            "maxNearby": 4,
+            "nearbyRange": 25,
+            "ritualMs": 3000,
+            "healPerSecond": 0.5,
+            "spawnRange": 8,
+            "circleRadius": 2.5,
+            "circleMoveSpeed": 0.8,
+            "animation": "attack",
+            "sound": "game:sounds/creature/wolf/howl1",
+            "soundRange": 32,
+            "soundStartMs": 300,
+            "soundVolume": 0.4,
+            "spawnDelayMs": 400
+          },
+          {
+            "whenHealthRelBelow": 0.4,
+            "cooldownSeconds": 22,
+            "spawns": [
+              { "entityCode": "albase:bone-wolf", "minCount": 1, "maxCount": 2 },
+              { "entityCode": "albase:explosive-locust", "minCount": 1, "maxCount": 2 }
+            ],
+            "maxNearby": 6,
+            "nearbyRange": 30,
+            "ritualMs": 3500,
+            "healPerSecond": 1,
+            "spawnRange": 10,
+            "circleRadius": 3.0,
+            "circleMoveSpeed": 1.0,
+            "animation": "attack",
+            "sound": "albase:mechanical/robotic-monster-roar",
+            "soundRange": 36,
+            "soundStartMs": 400,
+            "soundVolume": 0.4,
+            "spawnDelayMs": 350
+          }
+        ]
+      },
+      {
+        "code": "bossmodelswap",
+        "stages": [
+          {
+            "whenHealthRelBelow": 0.75,
+            "cooldownSeconds": 60,
+            "swapSound": "albase:dark-magic-charge-up",
+            "soundRange": 32,
+            "forms": [
+              {
+                "shape": "game:entity/lore/drifter/deerhorn",
+                "texture": "albase:boss-ossuarywarden-deerhorn",
+                "durationMs": 20000
+              }
+            ]
+          },
+          {
+            "whenHealthRelBelow": 0.55,
+            "cooldownSeconds": 55,
+            "swapSound": "albase:dark-magic-charge-up",
+            "soundRange": 32,
+            "forms": [
+              {
+                "shape": "game:entity/animal/mammal/wolf/eurasian-adult",
+                "texture": "albase:boss-bonecolossus-wolf",
+                "durationMs": 20000
+              }
+            ]
+          },
+          {
+            "whenHealthRelBelow": 0.35,
+            "cooldownSeconds": 50,
+            "swapSound": "albase:deathmagic",
+            "soundRange": 36,
+            "forms": [
+              {
+                "shape": "albase:entity/lore/locust/locust-corrupt-sawblade",
+                "texture": "albase:boss-ashenlurker-locust",
+                "durationMs": 20000
+              }
+            ]
+          },
+          {
+            "whenHealthRelBelow": 0.15,
+            "cooldownSeconds": 45,
+            "swapSound": "albase:deathmagic",
+            "soundRange": 40,
+            "forms": [
+              {
+                "shape": "game:entity/lore/bowtorn/gearfoot",
+                "texture": "albase:boss-subduction-maw-gearfoot",
+                "durationMs": 25000
+              }
+            ]
+          }
+        ]
+      },
+      { "code": "extraskinnable" },
+      { "code": "seraphinventory" },
+      {
+        "code": "taskai",
+        "aitasks": [
+          {
+            "code": "meleeattack",
+            "entityCodes": ["player"],
+            "priority": 2,
+            "damage": 14.0,
+            "damageTier": 4,
+            "minDist": 2.8,
+            "minVerDist": 2.8,
+            "attackAngleRangeDeg": 120,
+            "mincooldown": 1100,
+            "maxcooldown": 2000,
+            "damagePlayerAtMs": 450,
+            "attackDurationMs": 1000,
+            "animation": "swordhit",
+            "animationSpeed": 0.9,
+            "sound": "game:sounds/creature/drifter-hit",
+            "soundStartMs": 350,
+            "soundVolume": 3
+          },
+          {
+            "code": "seekentity",
+            "entityCodes": ["player"],
+            "priority": 1.6,
+            "mincooldown": 200,
+            "maxcooldown": 400,
+            "movespeed": 0.03,
+            "seekingRange": 45,
+            "maxFollowTime": 300,
+            "searchWaitMs": 500,
+            "executionChance": 1,
+            "animationSpeed": 1.15,
+            "animation": "walk"
+          },
+          {
+            "code": "seekentity",
+            "entityCodes": ["player"],
+            "priority": 1.4,
+            "mincooldown": 200,
+            "maxcooldown": 400,
+            "movespeed": 0.05,
+            "seekingRange": 30,
+            "maxFollowTime": 200,
+            "searchWaitMs": 250,
+            "executionChance": 0.75,
+            "animationSpeed": 1.35,
+            "animation": "run"
+          },
+          { "code": "lookaround", "priority": 0.5 }
+        ]
+      },
+      { "code": "bossrespawn", "respawnInGameHours": 24, "spawnNewBoss": false }
+    ]
+  },
+  "idleSoundRange": 14,
+  "sounds": {
+    "hurt": "game:sounds/creature/drifter-hurt",
+    "death": "game:sounds/creature/drifter-death",
+    "idle": "game:sounds/creature/drifter-idle",
+    "attack": "game:sounds/creature/drifter-hit"
+  }
+}

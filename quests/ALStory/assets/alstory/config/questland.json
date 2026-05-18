@@ -1,0 +1,13 @@
+{
+  "allowedQuestPrefixes": ["alstory:"],
+  "enterAction": "discover '{message}'; playsound sounds/effect/tempstab-drain 0.55",
+  "exitAction": "discover '{message}'; playsound sounds/effect/tempstab-drain 0.35",
+  "defaultExitMessage": "Мирные земли",
+  "enterMessages": {
+    "kvest loka 1": "Вход в Проклятый Холм",
+    "lager rasboinik": "Лагерь Кровавой Длани",
+    "basnya kvest": "Башня Ордена",
+    "derevnia": "Деревня у Погибшего Камня",
+    "nekropol kvest": "Некрополь Королей"
+  }
+}

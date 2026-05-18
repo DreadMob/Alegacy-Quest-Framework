@@ -1,0 +1,18 @@
+{
+  "id": "albase:trial-tier2",
+  "cooldown": 168,
+  "perPlayer": true,
+  "predecessor": "albase:trial-intro",
+  "trialTier": 2,
+  "onAcceptedActions": [
+    { "id": "resettrialtracker", "args": [] },
+    { "id": "playsound", "args": ["alegacyvsquest:sounds/queacc", "0.175"] },
+    { "id": "notify", "args": ["albase:trial-quest-accepted-tier2"] }
+  ],
+  "actionObjectives": [
+    { "id": "killactivetrial", "objectiveId": "trial-tier2-kill", "args": ["2"] }
+  ],
+  "actionRewards": [
+    { "id": "trialchallengebonuses", "args": [] }
+  ]
+}

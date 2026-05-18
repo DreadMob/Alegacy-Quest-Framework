@@ -1,0 +1,41 @@
+{
+  "components": [
+    {
+      "code": "main",
+      "owner": "trader",
+      "type": "talk",
+      "text": [
+        { "value": "Debugger online." }
+      ],
+      "jumpTo": "choices"
+    },
+    {
+      "code": "choices",
+      "owner": "player",
+      "type": "talk",
+      "text": [
+        { "value": "Trade", "jumpTo": "opentrade" },
+        { "value": "Arena status", "jumpTo": "tradearena_snapshot" },
+        { "value": "Bye", "jumpTo": "close" }
+      ]
+    },
+    {
+      "code": "opentrade",
+      "owner": "trader",
+      "trigger": "opentrade"
+    },
+    {
+      "code": "tradearena_snapshot",
+      "owner": "trader",
+      "trigger": "tradearena snapshot"
+    },
+    {
+      "code": "close",
+      "owner": "trader",
+      "type": "talk",
+      "text": [
+        { "value": "..." }
+      ]
+    }
+  ]
+}

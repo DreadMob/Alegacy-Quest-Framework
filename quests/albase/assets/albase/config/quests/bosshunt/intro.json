@@ -1,0 +1,104 @@
+{
+  "id": "albase:bosshunt-intro",
+  "cooldown": -1,
+  "perPlayer": true,
+  "killObjectiveCompleteSound": "albase:sounds/priest_quest_complete",
+  "killObjectiveCompleteSoundPitch": 0.38,
+  "killObjectiveCompleteSoundVolume": 0.35,
+  "onAcceptedActions": [
+    {
+      "id": "playsound",
+      "args": [
+        "alegacyvsquest:sounds/queacc",
+        "0.175"
+      ]
+    },
+    {
+      "id": "addjournalentry",
+      "args": [
+        "albase:bosshunt",
+        "albase:bosshunt-intro",
+        "albase:bosshunt-intro-title",
+        "albase:bosshunt-intro-journal-text"
+      ]
+    }
+  ],
+  "actionObjectives": [],
+  "killObjectives": [
+    {
+      "validCodes": [
+        "bowtorn-nightmare"
+      ],
+      "demand": 4
+    },
+    {
+      "validCodes": [
+        "drifter-nightmare"
+      ],
+      "demand": 6
+    },
+    {
+      "validCodes": [
+        "locust-corrupt-sawblade"
+      ],
+      "demand": 2
+    },
+    {
+      "validCodes": [
+        "shiver-stilt"
+      ],
+      "demand": 4
+    },
+    {
+      "validCodes": [
+        "shiver-bellhead"
+      ],
+      "demand": 5
+    },
+    {
+      "validCodes": [
+        "bell"
+      ],
+      "demand": 2
+    },
+    {
+      "validCodes": [
+        "locust-corrupt"
+      ],
+      "demand": 4
+    }
+  ],
+  "itemRewards": [],
+  "actionRewards": [
+    {
+      "id": "questitem",
+      "args": [
+        "albase:bosshunt-tracker"
+      ]
+    },
+    {
+      "id": "showquestfinaldialog",
+      "args": [
+        "albase:dialogue-bosshunter-intro-final-title",
+        "albase:dialogue-bosshunter-intro-final-text",
+        "albase:dialogue-bosshunter-intro-final-option"
+      ]
+    },
+    {
+      "id": "notify",
+      "args": [
+        "albase:bosshunt-tracker-received"
+      ]
+    },
+    {
+      "id": "addjournalentry",
+      "args": [
+        "albase:bosshunt",
+        "albase:bosshunt-intro",
+        "albase:bosshunt-intro-title",
+        "overwrite",
+        "albase:bosshunt-intro-complete-journal"
+      ]
+    }
+  ]
+}

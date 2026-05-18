@@ -1,0 +1,105 @@
+{
+  "canClimb": true,
+  "class": "EntityAgent",
+  "client": {
+    "renderer": "Shape",
+    "size": 1.28,
+    "shape": {
+      "base": "albase:entity/humanoid/trader"
+    },
+    "texture": {
+      "base": "albase:entity/humanoid/traderclothes/set2"
+    },
+    "behaviors": [
+      {
+        "code": "nametag",
+        "showtagonlywhentargeted": false
+      },
+      {
+        "code": "repulseagents"
+      },
+      {
+        "code": "controlledphysics",
+        "stepHeight": 1.01
+      },
+      {
+        "code": "interpolateposition"
+      },
+      {
+        "code": "conversable",
+        "dialogue": "config/dialogue/innkeeper"
+      },
+      {
+        "code": "questgiver"
+      }
+    ]
+  },
+  "code": "innkeeper",
+  "hitboxSize": {
+    "x": 0.77,
+    "y": 2.24
+  },
+  "attributes": {
+    "alternativeCollisionBox": [0.77, 2.24],
+    "renderRange": 32
+  },
+  "server": {
+    "behaviors": [
+      {
+        "code": "nametag",
+        "showtagonlywhentargeted": false,
+        "selectFromRandomName": [
+          "Трактирщик"
+        ]
+      },
+      {
+        "code": "controlledphysics",
+        "stepHeight": 1.01
+      },
+      {
+        "code": "health",
+        "currenthealth": 1000000,
+        "maxhealth": 1000000
+      },
+      {
+        "code": "conversable",
+        "dialogue": "config/dialogue/innkeeper"
+      },
+      {
+        "code": "questgiver",
+        "reputationnpc": "albase:innkeeper",
+        "alwaysquests": [
+          "albase:innkeeper-firstimpression"
+        ],
+        "singlequestatatime": true,
+        "chaincooldowndays": 30,
+        "maxavailablequests": 1,
+        "priorityquests": [
+          "albase:innkeeper-nightmantle"
+        ],
+        "rotationpool": [
+          "albase:innkeeper-quietpatrol",
+          "albase:innkeeper-badcustomers",
+          "albase:innkeeper-silentdeliveries",
+          "albase:innkeeper-foxthief",
+          "albase:innkeeper-cellarwatch",
+          "albase:innkeeper-missingmugs",
+          "albase:innkeeper-talkingbarrel",
+          "albase:innkeeper-doorposter",
+          "albase:innkeeper-nightrunhunt",
+          "albase:innkeeper-raccoonraid",
+          "albase:innkeeper-quietblade",
+          "albase:innkeeper-nightjog",
+          "albase:innkeeper-nightmantle"
+        ],
+        "rotationdays": 30,
+        "rotationcount": 1,
+        "noAvailableQuestDescLangKey": "albase:no-quest-available-innkeeper",
+        "noAvailableQuestCooldownDescLangKey": "albase:no-quest-available-innkeeper-cooldown",
+        "selectrandom": false,
+        "selectrandomcount": 1
+      }
+    ]
+  },
+  "sounds": {}
+}

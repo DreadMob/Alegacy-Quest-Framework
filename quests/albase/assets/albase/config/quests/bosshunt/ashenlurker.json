@@ -1,0 +1,98 @@
+{
+  "id": "albase:bosshunt-ashenlurker",
+  "cooldown": 75,
+  "perPlayer": true,
+  "predecessor": "albase:bosshunt-intro",
+  "onAcceptedActions": [
+    {
+      "id": "playsound",
+      "args": [
+        "alegacyvsquest:sounds/queacc",
+        "0.175"
+      ]
+    },
+    {
+      "id": "preloadbossmusic",
+      "args": [
+        "https://drive.google.com/uc?export=download&id=1l81SbymJR2rEStzKk-DWE6x6ycWytrZh"
+      ]
+    },
+    {
+      "id": "addjournalentry",
+      "args": [
+        "albase:bosshunt",
+        "albase:bosshunt-ashenlurker",
+        "albase:bosshunt-ashenlurker-title",
+        "albase:bosshunt-ashenlurker-journal-text"
+      ]
+    },
+    {
+      "id": "notify",
+      "args": [
+        "albase:bosshunt-use-tracker"
+      ]
+    },
+    {
+      "id": "notify",
+      "args": [
+        "albase:bosshunt-rotation-info"
+      ]
+    }
+  ],
+  "actionObjectives": [
+    {
+      "id": "killactiontarget",
+      "objectiveId": "ashenlurker",
+      "onCompleteActions": "addjournalentry albase:bosshunt albase:bosshunt-ashenlurker albase:bosshunt-ashenlurker-title overwrite albase:bosshunt-ashenlurker-reward-journal-text",
+      "args": [
+        "albase:bosshunt-ashenlurker",
+        "ashenlurker",
+        "albase:bosshunt:ashenlurker",
+        "1"
+      ]
+    }
+  ],
+  "killObjectives": [],
+  "itemRewards": [],
+  "actionRewards": [
+    {
+      "id": "addreputation",
+      "args": [
+        "npc",
+        "albase:bosshunter",
+        "50"
+      ]
+    },
+    {
+      "id": "addreputation",
+      "args": [
+        "npc",
+        "albase:bosshunter",
+        "50",
+        "alegacyvsquest:rep-bosshunt-ashenlurker-once"
+      ]
+    },
+    {
+      "id": "randomquestitem",
+      "args": [
+        "1",
+        "albase:bosshunt-reward-archer-gloves",
+        "albase:bosshunt-reward-ashen-sigil"
+      ]
+    },
+    {
+      "id": "showquestfinaldialog",
+      "args": [
+        "albase:dialogue-bosshunter-final-title",
+        "albase:dialogue-bosshunter-final-text",
+        "albase:dialogue-bosshunter-final-option"
+      ]
+    },
+    {
+      "id": "notify",
+      "args": [
+        "albase:bosshunt-ashenlurker-reward"
+      ]
+    }
+  ]
+}

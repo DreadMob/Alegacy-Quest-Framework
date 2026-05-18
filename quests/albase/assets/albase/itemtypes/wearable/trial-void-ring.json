@@ -1,0 +1,31 @@
+{
+  "code": "trial-void-ring",
+  "behaviors": [{ "name": "Wearable" }],
+  "maxstacksize": 1,
+  "storageFlags": 128,
+  "attributes": {
+    "handbook": { "exclude": true },
+    "clothescategory": "neck",
+    "wearableAttachment": true,
+    "warmth": 0,
+    "disableElements": ["hidefacialhair"]
+  },
+  "shape": { "base": "game:entity/humanoid/seraph/clothing/neck/marketeer" },
+  "textures": {
+    "seraph": { "base": "game:block/transparent" },
+    "marketeer": { "base": "albase:trials/void-ring" }
+  },
+  "renderAlphaTest": 0.25,
+  "guiTransform": {
+    "translation": { "x": 2, "y": 16, "z": 0 },
+    "rotation": { "x": 174, "y": -128, "z": 6 },
+    "origin": { "x": 0.45, "y": 1.4299, "z": 0.54 },
+    "scale": 2.98
+  },
+  "groundTransform": {
+    "translation": { "x": 0, "y": -0.05, "z": 0 },
+    "rotation": { "x": 0, "y": 0, "z": -90 },
+    "origin": { "x": 0.5, "y": 1.5, "z": 0.5 },
+    "scale": 3.06
+  }
+}

@@ -1,0 +1,35 @@
+﻿{
+  "code": "trial-abyss-mask",
+  "behaviors": [{ "name": "Wearable" }],
+  "maxstacksize": 1,
+  "storageFlags": 128,
+  "attributes": {
+    "handbook": { "exclude": true },
+    "clothescategory": "upperbodyover",
+    "wearableAttachment": true,
+    "warmth": 0,
+    "disableElements": ["ponytailhigh", "hair-uncovered", "sidehigh", "sidelow", "bangs"],
+    "keepElements": ["hair-covered", "hoodtight"]
+  },
+  "shape": {
+    "base": "game:entity/humanoid/seraph/clothing/upperbodyover/longsleeve-hood"
+  },
+  "textures": {
+    "seraph": { "base": "game:block/transparent" },
+    "uover": { "base": "albase:trials/abyss-mask" }
+  },
+  "renderAlphaTest": 0.25,
+  "guiTransform": {
+    "rotate": false,
+    "translation": { "x": 0, "y": 0, "z": 0 },
+    "rotation": { "x": -180, "y": -66, "z": 18 },
+    "origin": { "x": 0.2, "y": 1.36, "z": 0.4 },
+    "scale": 1.35
+  },
+  "groundTransform": {
+    "translation": { "x": 0.05, "y": 0.05, "z": 0 },
+    "rotation": { "x": 0, "y": 0, "z": -87 },
+    "origin": { "x": 0.5, "y": 0.5, "z": 0.5299 },
+    "scale": 2.19
+  }
+}
