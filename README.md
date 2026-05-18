@@ -10,6 +10,20 @@
 
 ---
 
+## 🖥️ Visual Editor
+
+The framework ships with a **standalone desktop application** for creating and editing all configurations — no need to write JSON by hand.
+
+**[Alegacy QF Editor](https://github.com/DreadMob/Alegacy-QF-Editor)** (11 MB, Rust + Tauri) auto-detects your quest packs and provides visual editors for:
+
+> Items · Bosses · Quests (with stages) · Boss Hunt · Quality Tiers · NPCs & Dialogues · Hollow Trials · Reputation · Localization
+
+Includes an analytics dashboard with balance charts (boss HP distribution, attribute usage, quest breakdown) to help with game design decisions.
+
+[![Download Editor](https://img.shields.io/badge/⬇️%20Download%20Editor-v0.3.0%20Windows%20x64-2563eb?style=for-the-badge)](https://github.com/user-attachments/files/27977382/Alegacy-QF-Editor-0.3.0-x64-setup.zip)
+
+---
+
 ## 🔥 About
 
 **Alegacy Quest Framework** is a full-featured quest engine built for [Vintage Story](https://www.vintagestory.at/). Originally started as a fork of [VSQuest](https://github.com/G3rste/vsquest), the project has since been rewritten and expanded into a standalone framework powering the [alegacy.online](https://alegacy.online) server.
