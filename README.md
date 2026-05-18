@@ -6,6 +6,7 @@
 [![Game Version](https://img.shields.io/badge/Vintage%20Story-1.22.1+-green.svg)](https://www.vintagestory.at/)
 [![Version](https://img.shields.io/badge/Version-3.0.0-orange.svg)](resources/modinfo.json)
 [![C#](https://img.shields.io/badge/C%23-.NET%2010-purple.svg)]()
+[![Editor](https://img.shields.io/badge/Download%20Editor-Windows%20x64-blue?style=for-the-badge&logo=windows)](https://github.com/DreadMob/Alegacy-QF-Editor/releases/latest)
 
 ---
 
